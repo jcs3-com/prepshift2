@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepshift · Menu Costing Engine</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="../index.html" class="brand">Prepshift<em>.</em></a>
+      <div class="tagline">Tools · Menu Costing · § Tool 05</div>
+    </div>
+  </header>
+
+  <nav class="primary-nav">
+    <ul>
+      <li><a href="../index.html">Index</a></li>
+      <li><a href="../index.html#recipes">Recipes</a></li>
+      <li><a href="calculators.html" class="active">Calculators</a></li>
+      <li><a href="draft.html">Draft & Bottled</a></li>
+      <li><a href="equipment.html">Equipment</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <header class="recipe-header fade-up">
+      <div class="kicker">Tools · § 05 · Live</div>
+      <h1>Menu Costing <em>Engine</em></h1>
+      <p class="standfirst">
+        Enter your bottle costs once. See your entire menu costed, priced, and margin-analyzed instantly. Solve for any target pour cost from 15% to 30%. This is the tool every bar owner should have run once a quarter and never has.
+      </p>
+    </header>
+
+    <p class="lead">
+      Pour cost — the ratio of ingredient cost to menu price — is the single most important number in your beverage program, and it's the number most bars don't actually know. The industry rule of thumb is 18–22% as a target. Most bars run 28–35% and don't realize it because their costing is back-of-envelope, their pricing is "what the competitor charges plus two dollars," and nobody has ever sat down and done the math drink by drink.
+    </p>
+
+    <p>
+      The engine below pulls every cocktail in this site's database, computes each one's true ingredient cost (house prep from your calculators + spirits at the wholesale prices you enter), recommends a menu price that hits your target pour cost, and shows you the gross margin per drink and per menu. Change the target pour cost slider and every price recomputes. Change a bottle cost and every drink that uses it recomputes.
+    </p>
+
+    <aside class="note">
+      <span class="note-label">What this gives you</span>
+      A conversation with your operating partner that goes "if we raise the menu prices by an average of three dollars and hold our spirit costs at $X, we'll add $Y to gross margin per night, which annualizes to $Z." That is the entire job of menu engineering. This tool does the math.
+    </aside>
+
+    <div id="mce-mount"></div>
+
+    <hr class="divider">
+
+    <div class="section-head">
+      <span class="section-num">§ Notes</span>
+      <h2>How to read the numbers</h2>
+      <span class="rule-end">Industry context</span>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h4>Pour cost benchmarks</h4>
+        <p>
+          <strong>18% or lower</strong> — Aggressive. Possible in high-end programs with strong brand premium pricing. Customers should not notice you are running cheap.
+        </p>
+        <p>
+          <strong>20–22%</strong> — Industry standard for well-run cocktail bars. Healthy margin, defensible pricing, room for free pours, comps, and waste.
+        </p>
+        <p>
+          <strong>25–28%</strong> — Where most bars actually operate. Margin still works, but variance and waste are eating into the program.
+        </p>
+        <p>
+          <strong>30%+</strong> — You are bleeding money. Either your costs are too high, your prices are too low, or your portion control is broken. Fix this in the next 90 days.
+        </p>
+      </div>
+      <div>
+        <h4>What this calculator does not account for</h4>
+        <p>
+          <strong>Labor cost.</strong> A bartender's time is real money. Cocktail-cost analysis below sets ingredient pour cost only; total cost of goods is usually 5–10 percentage points higher.
+        </p>
+        <p>
+          <strong>Spillage, comps, waste.</strong> Even the best programs lose 3–5% to spills, returns, mismeasurements, and the "buy a friend a drink" reality. Bake an extra 4% into your costing.
+        </p>
+        <p>
+          <strong>Garnish cost.</strong> A lime wedge, an orange peel, a sprig of mint — these add up. A well-garnished menu adds 5–8% to ingredient cost in aggregate.
+        </p>
+        <p>
+          <strong>Bottle yield variance.</strong> Free pour bartenders give 1.7 oz instead of 1.5 oz on average. This is well-documented and material. The tool assumes spec is honored; reality is messier.
+        </p>
+      </div>
+    </div>
+
+    <blockquote class="pull">
+      Pour cost is the single most important number in your beverage program, and it's the number most bars don't actually know.
+    </blockquote>
+
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ Method</span>
+      <h2>How to use this tool quarterly</h2>
+      <span class="rule-end">A protocol</span>
+    </div>
+
+    <ol class="method">
+      <li><strong>Pull this quarter's invoices.</strong> Get your last 90 days of spirit and modifier costs. Average them. Enter them in the editor above. Bottle prices fluctuate; your costing should track that.</li>
+      <li><strong>Set your target pour cost.</strong> If you're a high-end program in a strong market, 18%. If you're mid-market, 20%. If you're a value bar trying to drive volume, 22–25%. Be honest about which one you are.</li>
+      <li><strong>Compare current menu prices to recommended.</strong> The gap is your action item. Drinks running 5+ percentage points over target are candidates for repricing, recipe redesign, or removal.</li>
+      <li><strong>Identify the outliers.</strong> Drinks that hit your target perfectly are working. Drinks that come in well below target (high margin) are your stars — promote them. Drinks that come in well over target are bleeders — fix them.</li>
+      <li><strong>Make the changes.</strong> Menu repricing is a quarterly action, not a one-time event. Customers absorb $1 increases without notice; $3 increases get pushback. Move incrementally.</li>
+      <li><strong>Document the result.</strong> Track gross margin per night before and after the changes. The point of this whole exercise is to move that number.</li>
+    </ol>
+
+    <div class="flourish" style="margin-top:4rem">prepshift</div>
+
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <div>
+        <div class="imprint">Prep<span>shift</span><br><em>the working manual</em></div>
+        <p class="small" style="margin-top:1.5rem; color:rgba(244,237,224,0.6)">A bar-prep methodology, published in the open. Bethesda, Maryland.</p>
+      </div>
+      <div>
+        <h5>Recipes</h5>
+        <a href="recipe-lime.html">Fresh Lime</a>
+        <a href="recipe-lemon.html">Fresh Lemon</a>
+        <a href="recipe-pineapple.html">Fresh Pineapple</a>
+        <a href="recipe-ginger.html">Fresh Ginger</a>
+        <a href="recipe-simple.html">Simple Syrup</a>
+        <a href="recipe-demerara.html">Demerara Syrup</a>
+        <a href="recipe-honey-ginger.html">Honey-Ginger Syrup</a>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <a href="calculators.html">Core Recipes</a>
+        <a href="super-juice.html">Super Juice</a>
+        <a href="batch-scaler.html">Batch Scaler</a>
+        <a href="acid-sub.html">Acid Substitution</a>
+        <a href="menu-costing.html">Menu Costing</a>
+        <a href="draft.html">Draft & Bottled</a>
+      </div>
+      <div>
+        <h5>More</h5>
+        <a href="equipment.html">Equipment</a>
+        <a href="stories.html">Stories</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+      </div>
+    </div>
+    <div class="colophon-sub">
+      Prepshift · Vol. I · MMXXVI · Provisional data
+    </div>
+  </footer>
+
+  <script src="../data/ingredients.js"></script>
+  <script src="../data/extended.js"></script>
+  <script src="../js/calc.js"></script>
+  <script src="../js/menu-costing.js"></script>
+  <script>renderMenuCostingEngine('mce-mount');</script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

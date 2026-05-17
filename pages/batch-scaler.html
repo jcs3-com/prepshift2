@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepshift · Batched Cocktail Scaler</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="../index.html" class="brand">Prepshift<em>.</em></a>
+      <div class="tagline">Tools · Batch Scaler · § Tool 03</div>
+    </div>
+  </header>
+
+  <nav class="primary-nav">
+    <ul>
+      <li><a href="../index.html">Index</a></li>
+      <li><a href="../index.html#recipes">Recipes</a></li>
+      <li><a href="calculators.html" class="active">Calculators</a></li>
+      <li><a href="draft.html">Draft & Bottled</a></li>
+      <li><a href="equipment.html">Equipment</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="container-narrow">
+
+    <header class="recipe-header fade-up">
+      <div class="kicker">Tools · § 03 · Live</div>
+      <h1>Batched Cocktail <em>Scaler</em></h1>
+      <p class="standfirst">
+        Single-serving spec to any batch size, with proper water dilution, final ABV, and container fit. Modeled on Morgenthaler's batch math, with Prepshift's house ingredient costing layered in.
+      </p>
+    </header>
+
+    <p class="lead">
+      The mistake most operators make in batched cocktails is forgetting the water. A shaken cocktail picks up roughly 22% of its final volume in dilution from melting ice; a stirred cocktail picks up 25–30%. If you batch the spirits and citrus without adding water to compensate, your batched drink will be 22% stronger and 22% less balanced than the same drink built à la carte. The scaler below handles that math, so you don't.
+    </p>
+
+    <aside class="note">
+      <span class="note-label">Methodology</span>
+      Dilution percentages are pulled from Dave Arnold's <em>Liquid Intelligence</em> tables and validated through Jeffrey Morgenthaler's batch tool. Final ABV is computed from weighted-volume alcohol contribution after dilution. Cost figures show only "house" ingredients (juices, syrups) because your spirit costs depend on your specific bottle SKUs — drop your wholesale costs into the data file when you're ready.
+    </aside>
+
+    <div id="batch-calc"></div>
+
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ Method</span>
+      <h2>Production protocol</h2>
+      <span class="rule-end">From batch to glass</span>
+    </div>
+
+    <ol class="method">
+      <li><strong>Verify the spec.</strong> Confirm your single-serving recipe against a reference (Death &amp; Co, Cocktail Codex, or the bar's house book). The scaler is only as accurate as the input ratio.</li>
+      <li><strong>Combine in order.</strong> Spirits and modifiers first (these are the most stable and shouldn't oxidize). Then citrus and house ingredients. Water last.</li>
+      <li><strong>Taste test.</strong> Build one cocktail from the batch and shake/stir it to service. Compare against an à-la-carte build from the same spec. They should be identical. If the batched version reads watery, you over-diluted; if it reads boozy, you under-diluted.</li>
+      <li><strong>Chill aggressively.</strong> Batches need to come down to 28°F before service. Most under-counter fridges only hit 36°F. For pre-batched stirred drinks, freeze the batch — high-ABV liquid will not freeze solid at standard freezer temperatures.</li>
+      <li><strong>Label and date.</strong> Every container gets a batch number, build date, build time, and the producer's initials. This is non-negotiable for any operation running more than three batches.</li>
+      <li><strong>Service.</strong> Shaken cocktails get poured over fresh ice. Stirred cocktails get poured straight from the bottle into the chilled glass with a single large cube. Either way: garnish is built in-the-moment, not pre-attached.</li>
+    </ol>
+
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ Notes</span>
+      <h2>What batching does and doesn't fix</h2>
+      <span class="rule-end">The honest assessment</span>
+    </div>
+
+    <p>
+      <strong>What it fixes:</strong> Speed-of-service on high-volume drinks. Consistency across bartenders. Pour-cost discipline. Quality control. Ability to put a cocktail on a draft line or a tap. The capacity to do high-end weddings, brand activations, and pop-ups without sacrificing the program.
+    </p>
+    <p>
+      <strong>What it doesn't fix:</strong> Bad recipes. If your daiquiri is poorly balanced, batching it just gives you 5 liters of poorly balanced daiquiri. Batch only your tested-and-locked specs.
+    </p>
+    <p>
+      <strong>What it breaks:</strong> Anything with egg white (foam dies in storage). Anything with fresh herbs that need to be muddled (the oils oxidize and turn vegetal in batch). Anything that depends on a specific shake texture for its identity (sours can lose their bite). Test before you commit.
+    </p>
+
+    <hr class="divider">
+
+    <a href="calculators.html" class="btn btn-ghost">← All calculators</a>
+    <a href="../index.html" class="btn" style="margin-left:1rem">Index →</a>
+
+    <div class="flourish" style="margin-top:4rem">prepshift</div>
+
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <div>
+        <div class="imprint">Prep<span>shift</span><br><em>the working manual</em></div>
+        <p class="small" style="margin-top:1.5rem; color:rgba(244,237,224,0.6)">A bar-prep methodology, published in the open. Bethesda, Maryland.</p>
+      </div>
+      <div>
+        <h5>Recipes</h5>
+        <a href="recipe-lime.html">Fresh Lime</a>
+        <a href="recipe-lemon.html">Fresh Lemon</a>
+        <a href="recipe-pineapple.html">Fresh Pineapple</a>
+        <a href="recipe-ginger.html">Fresh Ginger</a>
+        <a href="recipe-simple.html">Simple Syrup</a>
+        <a href="recipe-demerara.html">Demerara Syrup</a>
+        <a href="recipe-honey-ginger.html">Honey-Ginger Syrup</a>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <a href="calculators.html">Core Recipes</a>
+        <a href="super-juice.html">Super Juice</a>
+        <a href="batch-scaler.html">Batch Scaler</a>
+        <a href="acid-sub.html">Acid Substitution</a>
+        <a href="menu-costing.html">Menu Costing</a>
+        <a href="draft.html">Draft & Bottled</a>
+      </div>
+      <div>
+        <h5>More</h5>
+        <a href="equipment.html">Equipment</a>
+        <a href="stories.html">Stories</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+      </div>
+    </div>
+    <div class="colophon-sub">
+      Prepshift · Vol. I · MMXXVI · Provisional data
+    </div>
+  </footer>
+
+  <script src="../data/ingredients.js"></script>
+  <script src="../data/extended.js"></script>
+  <script src="../js/calc.js"></script>
+  <script src="../js/batch-scaler.js"></script>
+  <script>renderBatchScaler('batch-calc');</script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

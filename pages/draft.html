@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepshift · Draft & Bottled Cocktails</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a href="../index.html" class="brand">Prepshift<em>.</em></a>
+      <div class="tagline">Draft & Bottled · § 04</div>
+    </div>
+  </header>
+
+  <nav class="primary-nav">
+    <ul>
+      <li><a href="../index.html">Index</a></li>
+      <li><a href="../index.html#recipes">Recipes</a></li>
+      <li><a href="calculators.html">Calculators</a></li>
+      <li><a href="draft.html" class="active">Draft & Bottled</a></li>
+      <li><a href="equipment.html">Equipment</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="container-narrow">
+
+    <header class="recipe-header fade-up">
+      <div class="kicker">§ 06 · Bottled, Tapped, Pre-Made</div>
+      <h1>Draft &amp; Bottled <em>Cocktails</em></h1>
+      <p class="standfirst">
+        The future of high-volume bar service. Pre-batched, force-carbonated, dispensed at temperature. Pioneered by Morgenthaler at Clyde Common in Portland and now standard in any bar program with throughput ambitions. The methodology is straightforward; the execution is exacting.
+      </p>
+    </header>
+
+    <p class="lead">
+      Bottled and draft cocktails are the same answer to two different questions. The question for the bottle is: how do we ship a cocktail to a customer's table — or to a customer's home — at the same quality as if we built it freshly? The question for the draft line is: how do we pour 200 cocktails in an hour, at consistent quality, with one bartender? Both answers begin with pre-batching, both end with dissolved CO₂, and both depend on understanding three numbers — final ABV, dilution, and carbonation pressure — well enough to engineer them on purpose.
+    </p>
+
+    <aside class="note">
+      <span class="note-label">Method credit</span>
+      The bottled and draft cocktail methodology in modern American bartending has many parents, but the most widely-cited public demonstrations come from Jeffrey Morgenthaler at Clyde Common (Portland, OR), beginning around 2011 with his bottled Americano and Negroni programs. His <a href="https://youtu.be/xkXJu3f5DzU" target="_blank">2011 Portland Cocktail Week demonstration</a> remains the single best three-minute introduction to the technique. Dave Arnold's <em>Liquid Intelligence</em> (Ch. 11) provides the chemistry. Camper English at Alcademics has documented dozens of bar programs' approaches. This page synthesizes their published work.
+    </aside>
+
+    <!-- THE CALCULATOR — front and center -->
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ Tool</span>
+      <h2>Carbonation &amp; dispense calculator</h2>
+      <span class="rule-end">Live</span>
+    </div>
+
+    <div id="carb-calc"></div>
+
+    <!-- THE THEORY -->
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ 01</span>
+      <h2>The three numbers that matter</h2>
+      <span class="rule-end">Theory</span>
+    </div>
+
+    <p>
+      Every bottled or draft cocktail is engineered around three numbers, and engineering each one well is the difference between a drink that tastes like itself and one that tastes flat, hot, or insipid.
+    </p>
+
+    <p>
+      <strong>Final ABV.</strong> When you build a Negroni à la carte, you stir it over ice. Ice melts. Dilution drops the ABV from roughly 32% (the spirit math) to around 22% (the served reality). When you bottle a Negroni, no ice ever touches it. If you bottle the spirit-math ABV, you have served a 32% ABV drink, which is undrinkable. <strong>You must dilute on the front end</strong>, by exactly the amount the customer's ice would have done — typically 25–35% for stirred drinks, 30–40% for shaken or carbonated drinks. Get this wrong and the drink tastes hot at the bottom of the glass and watery at the top.
+    </p>
+
+    <p>
+      <strong>Dilution.</strong> Filtered water, added to the batch in the same proportion the melted ice would have contributed. Distilled is fine; mineral water introduces minerals that may interact with the spirit. The water must be at the same temperature as the rest of the batch — adding warm water to chilled spirit drives off carbonation and disturbs the equilibrium you've worked to establish.
+    </p>
+
+    <p>
+      <strong>Carbonation pressure.</strong> The dissolved CO₂ target is measured in "volumes" — the ratio of dissolved gas to liquid at atmospheric pressure. Beer is 2.0–2.7 volumes; champagne is 5.0–5.5; bottled cocktails sit at 2.5–3.5 depending on style. Higher carbonation reads as more refreshing but masks subtle flavors; lower carbonation reads as fuller-bodied but loses the "draft" character. Your target depends on the drink and your audience.
+    </p>
+
+    <blockquote class="pull">
+      You must dilute on the front end, by exactly the amount the customer's ice would have done. Get this wrong and the drink tastes hot at the bottom of the glass and watery at the top.
+    </blockquote>
+
+    <!-- WHICH DRINKS WORK -->
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ 02</span>
+      <h2>Which drinks work, which don't</h2>
+      <span class="rule-end">Honest assessment</span>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h4>Works beautifully</h4>
+        <p>
+          <strong>Aperitivo cocktails.</strong> Negroni, Americano, Negroni Sbagliato, Aperol Spritz. The bitter-sweet structure tolerates batching and carbonation gracefully. Negroni on tap is now standard in serious bars.
+        </p>
+        <p>
+          <strong>Stirred classics.</strong> Manhattan, Boulevardier, Old Pal, Vieux Carré. The all-spirit-and-modifier composition has no fragile ingredients to degrade.
+        </p>
+        <p>
+          <strong>Carbonated highballs.</strong> Gin-tonic, Paloma, Whiskey Highball. These were originally carbonated drinks — bottling them is just a more controlled version of the same thing.
+        </p>
+        <p>
+          <strong>Champagne-style cocktails.</strong> French 75, Cosmo Spritz, Sgroppino. Designed for high carbonation; bottled versions can match the original quality.
+        </p>
+      </div>
+      <div>
+        <h4>Works with caveats</h4>
+        <p>
+          <strong>Bottled sours.</strong> Lemon-based sours hold for 5–7 days bottled and refrigerated. Lime-based degrade within 48 hours regardless of carbonation. The flavor curve of lime juice is the enemy here.
+        </p>
+        <p>
+          <strong>Drinks with bitters.</strong> Bitters at typical service dosage (2 dashes ≈ 0.06 oz) are stable, but the flavor profile shifts in bottle over 30+ days. Re-bitter at service if you're going long-storage.
+        </p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <h4>Does not work</h4>
+        <p>
+          <strong>Egg-white drinks.</strong> Foam dies in storage. The Whiskey Sour, the Pisco Sour, the Ramos Gin Fizz — all require fresh egg incorporation at service. No workaround. Don't try.
+        </p>
+        <p>
+          <strong>Muddled drinks.</strong> The Mojito, the Caipirinha, the Old Cuban — the muddled fresh herb is the drink. Pre-batching destroys the volatile oils that make it work. Use fresh basil or mint as a garnish at service if you must.
+        </p>
+        <p>
+          <strong>Anything with dairy.</strong> White Russians, Brandy Alexanders, milk punches. Dairy in carbonated systems is a sanitation nightmare and a flavor disaster.
+        </p>
+      </div>
+      <div>
+        <h4>Counterintuitive failures</h4>
+        <p>
+          <strong>The Daiquiri.</strong> Should work on paper — it doesn't. The lime juice degrades faster than the carbonation can preserve it. Even a 48-hour batched Daiquiri reads tired. Build to order.
+        </p>
+        <p>
+          <strong>The Espresso Martini.</strong> Same problem as egg whites: the foam (from agitating the coffee oils) doesn't survive batching. You can batch the base, but you cannot batch the served drink.
+        </p>
+      </div>
+    </div>
+
+    <!-- THE EQUIPMENT -->
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ 03</span>
+      <h2>The hardware</h2>
+      <span class="rule-end">What you need to actually do this</span>
+    </div>
+
+    <p>
+      The equipment for bottled and draft cocktails is more specific than most bar prep, but not unreasonably expensive. The starter kit is well under $2,000 and supports a serious program. Scaling up to industrial-grade requires more investment but the marginal cost per drink falls dramatically.
+    </p>
+
+    <table class="data">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Use</th>
+          <th>Approx. cost</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>CO₂ tank, 5 lb refillable</strong></td><td>Gas source for carbonation and dispense</td><td>$80 (+$25/fill)</td><td><span style="color:var(--oxblood);font-weight:600">Essential</span></td></tr>
+        <tr><td><strong>Dual-gauge CO₂ regulator</strong></td><td>Set line pressure precisely</td><td>$50</td><td><span style="color:var(--oxblood);font-weight:600">Essential</span></td></tr>
+        <tr><td><strong>Cornelius keg, 5 gal (used)</strong></td><td>Batch vessel for force-carbonation</td><td>$60</td><td><span style="color:var(--oxblood);font-weight:600">Essential</span></td></tr>
+        <tr><td><strong>Gas-ball-lock and liquid-ball-lock fittings</strong></td><td>Connect keg to CO₂ and to dispense line</td><td>$25</td><td><span style="color:var(--oxblood);font-weight:600">Essential</span></td></tr>
+        <tr><td><strong>iSi soda siphon, 1L</strong></td><td>Small-batch carbonation, single-bottle production</td><td>$110</td><td><span style="color:var(--ochre);font-weight:600">High</span></td></tr>
+        <tr><td><strong>Beverage line, 3/16" ID, 10 ft</strong></td><td>Dispense line; length matters for pressure balancing</td><td>$15</td><td><span style="color:var(--oxblood);font-weight:600">Essential</span></td></tr>
+        <tr><td><strong>Stainless faucet (Perlick 525PC)</strong></td><td>Dispense at the bar</td><td>$95</td><td><span style="color:var(--ochre);font-weight:600">High</span></td></tr>
+        <tr><td><strong>Counter-pressure bottle filler</strong></td><td>Fill 200-750 mL bottles from a carbonated source without losing pressure</td><td>$180</td><td><span style="color:var(--ochre);font-weight:600">High</span></td></tr>
+        <tr><td><strong>Bottle capper + 26mm crown caps</strong></td><td>Seal bottles airtight</td><td>$45 (+$15/gross caps)</td><td><span style="color:var(--ochre);font-weight:600">High</span></td></tr>
+        <tr><td><strong>Glycol chiller / kegerator</strong></td><td>Hold the keg and dispense line at 36–40°F</td><td>$400–$1,200</td><td><span style="color:#5a5a2c;font-weight:600">Useful</span></td></tr>
+      </tbody>
+    </table>
+
+    <p class="small" style="margin-top:1rem">
+      A starter kit (CO₂ + regulator + Cornelius keg + lines + faucet + simple kegerator) lands around $750. A bottling-focused kit (counter-pressure filler + capper + iSi siphon + bottles) lands around $400. Most programs build one capability first and add the other in year two.
+    </p>
+
+    <!-- THE METHOD -->
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ 04</span>
+      <h2>The procedure</h2>
+      <span class="rule-end">Production protocol</span>
+    </div>
+
+    <ol class="method">
+      <li><strong>Build the still batch.</strong> Use the calculator above to scale your single-serving recipe to your target volume. Add the dilution water as part of the batch — this is the critical step most bars skip.</li>
+      <li><strong>Chill aggressively.</strong> Bring the entire batch down to 32–36°F before carbonating. CO₂ solubility roughly doubles between 50°F and 32°F. Bottling a warm batch is the most common failure mode.</li>
+      <li><strong>Transfer to the carbonating vessel.</strong> Cornelius keg for draft; an iSi siphon for small-batch bottling. Purge the vessel's headspace with CO₂ before adding the liquid — air in the headspace will oxidize the drink within 24 hours.</li>
+      <li><strong>Set the carbonation pressure.</strong> Use the table above. For a 36°F Negroni at 2.5 volumes CO₂, that's roughly 10 PSI. Set the regulator, connect the gas, and walk away.</li>
+      <li><strong>Equilibrate.</strong> Force-carbonation takes 24–48 hours at temperature and pressure. You can accelerate this by rocking the keg for 2–3 minutes at high pressure (30 PSI), then bleeding off and setting to dispense pressure — but this is the bar program's choice between speed and consistency.</li>
+      <li><strong>Bottle (if bottling).</strong> Use a counter-pressure filler from the carbonated source into pre-chilled bottles. The bottle's headspace must be flushed with CO₂ before filling, and capping must happen within seconds. Sloppy here = flat product within an hour.</li>
+      <li><strong>Label and date.</strong> Every bottle gets a date. Carbonated cocktails refrigerated at 36°F hold 14 days for stirred drinks, 5–7 days for sours, 48 hours for anything with fresh lime. Track aggressively.</li>
+      <li><strong>Serve.</strong> Bottled — open and pour into a chilled glass with a garnish. Draft — pour at 12–15 PSI line pressure, into a chilled glass, with the appropriate garnish. The garnish is the only thing the customer sees that's "fresh"; do not skimp on it.</li>
+    </ol>
+
+    <!-- COMMON FAILURE MODES -->
+    <div class="section-head" style="margin-top:3rem">
+      <span class="section-num">§ 05</span>
+      <h2>Common failure modes</h2>
+      <span class="rule-end">What goes wrong</span>
+    </div>
+
+    <p>
+      <strong>Drink reads "hot" at first sip.</strong> Under-diluted batch. The customer is tasting near-spirit-strength alcohol. Add 5–10% more water to the next batch and re-test.
+    </p>
+    <p>
+      <strong>Drink reads "watery" or thin.</strong> Over-diluted, or carbonation has dissipated. Check the bottle seal first; check the dilution math second.
+    </p>
+    <p>
+      <strong>Carbonation goes flat within 30 seconds of pouring.</strong> Temperature problem. The liquid was too warm when carbonated, the gas didn't dissolve properly, and it's escaping at atmospheric pressure. Re-chill, re-carbonate.
+    </p>
+    <p>
+      <strong>Drink tastes like wet cardboard after 7 days.</strong> Oxidation. Bottle headspace wasn't flushed with CO₂ before sealing, or the cap is leaking. Check seal integrity by submerging a bottle in warm water — bubbles indicate leak.
+    </p>
+    <p>
+      <strong>Foam pours from the tap.</strong> Either the line pressure is too high, the line length is wrong, or the temperature is fluctuating. Diagnose in that order.
+    </p>
+
+    <hr class="divider">
+
+    <a href="calculators.html" class="btn btn-ghost">← All calculators</a>
+    <a href="../index.html" class="btn" style="margin-left:1rem">Index →</a>
+
+    <div class="flourish" style="margin-top:4rem">prepshift</div>
+
+  </main>
+
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <div>
+        <div class="imprint">Prep<span>shift</span><br><em>the working manual</em></div>
+        <p class="small" style="margin-top:1.5rem; color:rgba(244,237,224,0.6)">A bar-prep methodology, published in the open. Bethesda, Maryland.</p>
+      </div>
+      <div>
+        <h5>Recipes</h5>
+        <a href="recipe-lime.html">Fresh Lime</a>
+        <a href="recipe-lemon.html">Fresh Lemon</a>
+        <a href="recipe-pineapple.html">Fresh Pineapple</a>
+        <a href="recipe-ginger.html">Fresh Ginger</a>
+        <a href="recipe-simple.html">Simple Syrup</a>
+        <a href="recipe-demerara.html">Demerara Syrup</a>
+        <a href="recipe-honey-ginger.html">Honey-Ginger Syrup</a>
+      </div>
+      <div>
+        <h5>Tools</h5>
+        <a href="calculators.html">Core Recipes</a>
+        <a href="super-juice.html">Super Juice</a>
+        <a href="batch-scaler.html">Batch Scaler</a>
+        <a href="acid-sub.html">Acid Substitution</a>
+        <a href="menu-costing.html">Menu Costing</a>
+        <a href="draft.html">Draft & Bottled</a>
+      </div>
+      <div>
+        <h5>More</h5>
+        <a href="equipment.html">Equipment</a>
+        <a href="stories.html">Stories</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="about.html">About</a>
+        <a href="legal.html">Legal</a>
+      </div>
+    </div>
+    <div class="colophon-sub">
+      Prepshift · Vol. I · MMXXVI · Provisional data
+    </div>
+  </footer>
+
+  <script src="../data/ingredients.js"></script>
+  <script src="../data/extended.js"></script>
+  <script src="../js/carbonation.js"></script>
+  <script>renderCarbonationCalc('carb-calc');</script>
+  <script src="../js/search.js"></script>
+</body>
+</html>

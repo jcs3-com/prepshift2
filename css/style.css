@@ -1,0 +1,1598 @@
+/* PREPSHIFT — Editorial Prep-Book Aesthetic */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --paper:        #f4ede0;
+  --paper-dark:   #ebe2d2;
+  --ink:          #1a1612;
+  --ink-soft:     #3a342c;
+  --ink-faint:    #6b6354;
+  --rule:         #1a1612;
+  --oxblood:      #6b1d22;
+  --oxblood-deep: #4a1419;
+  --ochre:        #b8860b;
+  --olive:        #5a5a2c;
+  --stain:        rgba(107, 29, 34, 0.08);
+
+  --serif-display: 'Fraunces', Georgia, serif;
+  --serif-body:    'Lora', Georgia, serif;
+  --mono:          'IBM Plex Mono', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif-body);
+  font-size: 17px;
+  line-height: 1.65;
+  /* paper grain */
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(107,29,34,0.025) 0, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(184,134,11,0.03) 0, transparent 60%),
+    repeating-linear-gradient(45deg, transparent 0 2px, rgba(26,22,18,0.012) 2px 3px);
+  min-height: 100vh;
+}
+
+/* ---------- HEADER ---------- */
+.masthead {
+  border-bottom: 2px solid var(--ink);
+  padding: 1.4rem 2rem 1.2rem;
+  position: relative;
+}
+.masthead::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--ink);
+}
+.masthead-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: var(--serif-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1;
+  font-variation-settings: "opsz" 144;
+}
+.brand em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--oxblood);
+}
+.tagline {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-faint);
+}
+
+/* ---------- NAV ---------- */
+.primary-nav {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.6rem 2rem;
+}
+.primary-nav ul {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.primary-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.primary-nav a:hover,
+.primary-nav a.active {
+  color: var(--paper);
+  border-bottom-color: var(--ochre);
+}
+
+/* ---------- LAYOUT ---------- */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+.container-narrow {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  padding: 5rem 2rem 4rem;
+  border-bottom: 1px solid var(--ink);
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+.hero-issue {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--oxblood);
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.hero-issue::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--ink);
+}
+.hero h1 {
+  font-family: var(--serif-display);
+  font-weight: 300;
+  font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+  font-variation-settings: "opsz" 144;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--oxblood);
+}
+.hero-lede {
+  font-family: var(--serif-body);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 36rem;
+}
+.hero-lede:first-letter {
+  font-family: var(--serif-display);
+  font-size: 3.6rem;
+  font-weight: 600;
+  float: left;
+  line-height: 0.85;
+  padding: 0.3rem 0.6rem 0 0;
+  color: var(--oxblood);
+}
+.hero-meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--ink);
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+.hero-meta dt {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  font-size: 0.68rem;
+  margin-bottom: 0.25rem;
+}
+.hero-meta dd { color: var(--ink); font-size: 0.9rem; }
+
+/* ---------- SECTION HEADERS ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.8rem;
+  margin-bottom: 2.5rem;
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--oxblood);
+}
+.section-head h2 {
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  letter-spacing: -0.02em;
+  flex: 1;
+}
+.section-head .rule-end {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+h3 {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.6rem;
+}
+h4 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.6rem;
+  color: var(--oxblood);
+}
+p { margin-bottom: 1rem; }
+a { color: var(--oxblood); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--oxblood-deep); }
+
+.lead {
+  font-family: var(--serif-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--oxblood);
+  padding-left: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+/* ---------- CARD GRID ---------- */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+.entry-card {
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 2rem;
+  background: var(--paper);
+  transition: background 0.25s;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  position: relative;
+}
+.entry-card:hover {
+  background: var(--paper-dark);
+}
+.entry-card .num {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--oxblood);
+  letter-spacing: 0.15em;
+}
+.entry-card h3 {
+  margin: 0.5rem 0 0.8rem;
+}
+.entry-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+.entry-card .arrow {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--oxblood);
+}
+
+/* ---------- TWO-COL EDITORIAL ---------- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .two-col { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ---------- RECIPE / CALCULATOR PAGE ---------- */
+.recipe-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.recipe-header .kicker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--oxblood);
+  margin-bottom: 0.8rem;
+}
+.recipe-header h1 {
+  font-family: var(--serif-display);
+  font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  font-variation-settings: "opsz" 144;
+}
+.recipe-header h1 em {
+  font-style: italic;
+  color: var(--oxblood);
+}
+.recipe-header .standfirst {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 42rem;
+}
+
+/* recipe meta strip */
+.meta-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0;
+  border: 1px solid var(--ink);
+  margin: 2rem 0;
+  background: var(--paper);
+}
+.meta-strip > div {
+  padding: 0.9rem 1rem;
+  border-right: 1px solid var(--ink);
+}
+.meta-strip > div:last-child { border-right: none; }
+.meta-strip dt {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 0.3rem;
+}
+.meta-strip dd {
+  font-family: var(--serif-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ---------- CALCULATOR ---------- */
+.calc-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  margin: 2rem 0 3rem;
+}
+@media (max-width: 760px) {
+  .calc-wrap { grid-template-columns: 1fr; }
+  .calc-wrap .calc-inputs { border-right: none; border-bottom: 1px solid var(--ink); }
+}
+.calc-inputs, .calc-output {
+  padding: 2rem;
+}
+.calc-inputs {
+  border-right: 1px solid var(--ink);
+  background:
+    repeating-linear-gradient(transparent 0 31px, rgba(107,29,34,0.06) 31px 32px);
+}
+.calc-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ink-faint);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.calc-input-row {
+  margin-bottom: 1.6rem;
+}
+.calc-input-row input,
+.calc-input-row select {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.calc-input-row input:focus,
+.calc-input-row select:focus {
+  outline: 2px solid var(--oxblood);
+  outline-offset: -2px;
+}
+.calc-input-row .unit-toggle {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+  margin-left: 0.5rem;
+}
+.calc-input-row .unit-toggle button {
+  background: var(--paper);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: var(--ink);
+  border-right: 1px solid var(--ink);
+}
+.calc-input-row .unit-toggle button:last-child { border-right: none; }
+.calc-input-row .unit-toggle button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.calc-output {
+  background: var(--ink);
+  color: var(--paper);
+}
+.calc-output .calc-label { color: rgba(244,237,224,0.6); }
+.calc-output h3 {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--paper);
+  border-bottom: 1px solid rgba(244,237,224,0.3);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.calc-output .result-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.6rem 0;
+  border-bottom: 1px dotted rgba(244,237,224,0.2);
+  font-family: var(--mono);
+}
+.calc-output .result-line:last-child { border-bottom: none; }
+.calc-output .result-label {
+  font-size: 0.85rem;
+  color: rgba(244,237,224,0.7);
+}
+.calc-output .result-value {
+  font-family: var(--serif-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--paper);
+}
+.calc-output .result-value.accent { color: var(--ochre); }
+.calc-output .cost-summary {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--paper);
+}
+.calc-output .cost-summary .result-value {
+  font-size: 2rem;
+  color: var(--ochre);
+}
+
+/* ---------- TABLES ---------- */
+table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  margin: 2rem 0;
+}
+table.data th, table.data td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ink);
+}
+table.data th {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+table.data tr:nth-child(even) td {
+  background: var(--paper-dark);
+}
+table.data td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---------- METHOD STEPS ---------- */
+ol.method {
+  counter-reset: step;
+  list-style: none;
+  margin: 2rem 0;
+}
+ol.method li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+ol.method li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--oxblood);
+}
+
+/* ---------- INGREDIENT LIST ---------- */
+ul.ingredients {
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+ul.ingredients li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px dotted var(--ink-faint);
+  font-family: var(--mono);
+  font-size: 0.92rem;
+}
+ul.ingredients .ingredient-name { color: var(--ink); }
+ul.ingredients .ingredient-qty { color: var(--oxblood); font-weight: 500; }
+
+/* ---------- PULL QUOTE ---------- */
+blockquote.pull {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 1.35;
+  color: var(--ink);
+  border: none;
+  padding: 2rem 0;
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+}
+blockquote.pull::before {
+  content: '"';
+  font-size: 5rem;
+  position: absolute;
+  top: -0.5rem;
+  left: -2rem;
+  color: var(--oxblood);
+  line-height: 1;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--oxblood); color: var(--paper); border-color: var(--oxblood); }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+}
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* ---------- FOOTER ---------- */
+.colophon {
+  border-top: 2px solid var(--ink);
+  margin-top: 4rem;
+  padding: 3rem 2rem 2rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+.colophon-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+@media (max-width: 760px) {
+  .colophon-inner { grid-template-columns: 1fr 1fr; }
+}
+.colophon h5 {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ochre);
+  margin-bottom: 1rem;
+}
+.colophon a {
+  color: var(--paper);
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0;
+  font-size: 0.95rem;
+}
+.colophon a:hover { color: var(--ochre); }
+.colophon .imprint {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--paper);
+}
+.colophon .imprint span { color: var(--ochre); }
+.colophon-sub {
+  border-top: 1px solid rgba(244,237,224,0.2);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: rgba(244,237,224,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+/* ---------- ASIDE / SIDE NOTE ---------- */
+aside.note {
+  border-left: 2px solid var(--oxblood);
+  padding: 0.8rem 0 0.8rem 1.5rem;
+  background: var(--stain);
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+aside.note .note-label {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--oxblood);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* ---------- FILMSTRIP / FEATURED ---------- */
+.filmstrip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin: 2rem 0;
+}
+.filmstrip-cell {
+  padding: 1.5rem;
+  border-right: 1px solid var(--ink);
+  font-family: var(--mono);
+}
+.filmstrip-cell:last-child { border-right: none; }
+.filmstrip-cell .label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin-bottom: 0.4rem;
+}
+.filmstrip-cell .value {
+  font-family: var(--serif-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--oxblood);
+}
+
+/* ---------- DECORATIVE ELEMENTS ---------- */
+.flourish {
+  text-align: center;
+  font-family: var(--serif-display);
+  font-style: italic;
+  color: var(--ink-faint);
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
+.flourish::before, .flourish::after {
+  content: '·';
+  padding: 0 1rem;
+  color: var(--oxblood);
+}
+
+/* ---------- SMALL UTILITIES ---------- */
+.small { font-size: 0.85rem; color: var(--ink-faint); }
+.mono { font-family: var(--mono); }
+.center { text-align: center; }
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--ink);
+  margin: 3rem 0;
+}
+hr.divider-dotted {
+  border: none;
+  border-top: 1px dotted var(--ink-faint);
+  margin: 2rem 0;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 0.7s cubic-bezier(.2,.7,.3,1) backwards;
+}
+.fade-up:nth-child(1) { animation-delay: 0.05s; }
+.fade-up:nth-child(2) { animation-delay: 0.15s; }
+.fade-up:nth-child(3) { animation-delay: 0.25s; }
+.fade-up:nth-child(4) { animation-delay: 0.35s; }
+.fade-up:nth-child(5) { animation-delay: 0.45s; }
+
+/* ---------- PRINT STYLES ----------
+ * Designed for printing a clean spec card from any recipe page.
+ * Strips nav, footer, and calculator output panel.
+ * Adds a printed header/footer banner.
+ */
+@media print {
+  @page {
+    size: letter;
+    margin: 0.6in 0.7in;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Hide navigation and interactive chrome */
+  .masthead,
+  .primary-nav,
+  .colophon,
+  .btn,
+  .unit-toggle,
+  .calc-input-row input,
+  .calc-input-row select,
+  .calc-output,
+  .filmstrip,
+  aside.note,
+  hr.divider,
+  hr.divider-dotted,
+  .fade-up { animation: none !important; }
+
+  /* Hide some sections that aren't useful on paper */
+  .calc-output {
+    display: none !important;
+  }
+  .calc-wrap {
+    grid-template-columns: 1fr !important;
+    border-color: black !important;
+  }
+  .calc-inputs {
+    border-right: none !important;
+    background: white !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  /* Printed brand banner */
+  body::before {
+    content: "PREPSHIFT · STATION SPEC CARD";
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9pt;
+    letter-spacing: 0.2em;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+
+  body::after {
+    content: "prepshift.com · printed " attr(data-print-date);
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7pt;
+    letter-spacing: 0.15em;
+    border-top: 1px solid black;
+    padding-top: 0.3rem;
+    margin-top: 1rem;
+    text-align: center;
+    color: #444;
+  }
+
+  main, .container, .container-narrow {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .recipe-header {
+    border-bottom: 2px solid black;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+  .recipe-header h1 {
+    font-size: 22pt;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .recipe-header h1 em { color: black !important; }
+  .recipe-header .standfirst {
+    font-size: 10pt;
+    color: #333;
+  }
+  .kicker {
+    color: black !important;
+  }
+
+  .meta-strip {
+    border: 1px solid black !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+  .meta-strip > div { border-color: black !important; }
+  .meta-strip dt { font-size: 7pt !important; }
+  .meta-strip dd { font-size: 10pt !important; color: black !important; }
+
+  .section-head {
+    border-bottom: 1px solid black;
+    margin-top: 0.8rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+  }
+  .section-head h2 {
+    font-size: 13pt;
+    color: black !important;
+  }
+  .section-num {
+    color: black !important;
+    font-size: 8pt !important;
+  }
+
+  ol.method li {
+    font-size: 10pt;
+    padding-left: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  ol.method li::before {
+    font-size: 16pt;
+    color: black !important;
+  }
+
+  ul.ingredients li {
+    font-size: 9pt;
+    padding: 0.3rem 0;
+  }
+  ul.ingredients .ingredient-qty { color: black !important; }
+
+  .lead, blockquote.pull {
+    font-size: 10pt;
+    color: black !important;
+    padding: 0.4rem 0;
+    margin: 0.6rem 0;
+    border-left-color: black !important;
+  }
+  blockquote.pull::before { display: none; }
+
+  table.data {
+    font-size: 8pt;
+  }
+  table.data th {
+    background: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Page break hints */
+  .section-head { break-after: avoid; }
+  ol.method, ul.ingredients { break-inside: avoid; }
+
+  /* Force black-ink versions of accent text */
+  a, a:visited { color: black !important; text-decoration: none; }
+  em { color: black !important; }
+  .arrow, .num, h4 { color: black !important; }
+}
+
+/* "Print this spec card" button helper — visible on screen, hidden in print */
+.print-spec-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  margin-left: 0.6rem;
+  transition: background 0.2s;
+}
+.print-spec-btn:hover { background: var(--ink); color: var(--paper); }
+
+/* ============================================================
+ * SEARCH UI
+ * ============================================================ */
+
+.masthead-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.85rem;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.masthead-search-btn:hover,
+.masthead-search-btn:focus {
+  background: var(--ink);
+  color: var(--paper);
+  outline: none;
+}
+.masthead-search-btn .search-btn-kbd {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  opacity: 0.65;
+}
+.masthead-search-btn:hover .search-btn-kbd {
+  opacity: 0.85;
+}
+
+.search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+}
+.search-modal.open {
+  display: block;
+}
+.search-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 22, 18, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  animation: fade-in 0.18s;
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.search-panel {
+  position: absolute;
+  top: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(640px, calc(100vw - 32px));
+  max-height: 80vh;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(26, 22, 18, 0.3);
+  animation: search-slide 0.22s cubic-bezier(.2,.7,.3,1);
+}
+@keyframes search-slide {
+  from { opacity: 0; transform: translate(-50%, -10px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink-faint);
+}
+.search-input-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--serif-display);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--ink);
+  outline: none;
+  padding: 0;
+  font-variation-settings: "opsz" 144;
+  min-width: 0;
+}
+.search-input-wrap input::placeholder {
+  color: var(--ink-faint);
+  font-style: italic;
+}
+.search-close {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--ink-faint);
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.search-close:hover { color: var(--oxblood); }
+
+.search-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.4rem 0;
+}
+
+.search-empty {
+  padding: 1.5rem 1.2rem;
+  text-align: center;
+}
+.search-hint {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+  line-height: 2;
+}
+.search-hint-small {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin: 0;
+}
+.search-hint-small kbd {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  margin: 0 0.15rem;
+  border: 1px solid var(--ink-faint);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  background: var(--paper-dark);
+}
+.search-suggest {
+  background: var(--paper-dark);
+  border: 1px solid var(--ink-faint);
+  padding: 0.25rem 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--oxblood);
+  cursor: pointer;
+  margin: 0 0.15rem;
+  border-radius: 0;
+}
+.search-suggest:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.search-result {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem 1.2rem;
+  text-decoration: none;
+  color: var(--ink);
+  border-bottom: 1px dotted var(--ink-faint);
+  transition: background 0.1s;
+}
+.search-result:last-child { border-bottom: none; }
+.search-result:hover,
+.search-result.selected {
+  background: var(--paper-dark);
+}
+.search-result.selected {
+  background: var(--ink);
+  color: var(--paper);
+}
+.search-result.selected .search-result-subtitle { color: rgba(244, 237, 224, 0.7); }
+.search-result.selected .search-result-type { color: var(--ochre) !important; }
+.search-result.selected .search-result-arrow { color: var(--ochre); }
+
+.search-result-type {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  flex-shrink: 0;
+  width: 80px;
+  text-align: right;
+}
+.search-result-body {
+  flex: 1;
+  min-width: 0;
+}
+.search-result-title {
+  font-family: var(--serif-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+.search-result-subtitle {
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-result-arrow {
+  font-family: var(--serif-display);
+  font-style: italic;
+  color: var(--oxblood);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+ * MOBILE — comprehensive pass
+ * Breakpoint: 760px (phone landscape and below)
+ * Smaller breakpoint at 480px (most phones in portrait)
+ * ============================================================ */
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+
+  /* MASTHEAD: stack brand and tagline, keep search button inline */
+  .masthead { padding: 1rem 1rem 0.85rem; }
+  .masthead-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .brand {
+    font-size: 1.8rem;
+    flex: 1 1 auto;
+  }
+  .tagline {
+    display: none; /* tagline eats space on phone; show on tablet+ */
+  }
+  .masthead-search-btn {
+    padding: 0.45rem 0.65rem;
+  }
+  .masthead-search-btn .search-btn-label { display: none; }
+  .masthead-search-btn .search-btn-kbd  { display: none; }
+
+  /* PRIMARY NAV: convert to horizontal scrolling pill row */
+  .primary-nav { padding: 0.4rem 1rem; }
+  .primary-nav ul {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .primary-nav ul::-webkit-scrollbar { display: none; }
+  .primary-nav li { flex-shrink: 0; }
+  .primary-nav a { font-size: 0.7rem; padding: 0.4rem 0; }
+
+  /* CONTAINERS: tighter padding */
+  .container,
+  .container-narrow {
+    padding: 1.5rem 1rem;
+  }
+
+  /* HERO: drop drop-cap a bit, tighten meta */
+  .hero { padding: 2rem 1rem 2rem; }
+  .hero-inner { gap: 1.5rem; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero-lede { font-size: 1.05rem; }
+  .hero-lede:first-letter {
+    font-size: 2.8rem;
+    padding: 0.2rem 0.5rem 0 0;
+  }
+  .hero-meta {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem 1rem;
+  }
+  .hero-meta dt { font-size: 0.65rem; }
+  .hero-meta dd { font-size: 0.85rem; }
+  .hero-issue {
+    font-size: 0.66rem;
+    flex-wrap: wrap;
+  }
+
+  /* RECIPE HEADER */
+  .recipe-header h1 { font-size: 2rem; }
+  .recipe-header .standfirst { font-size: 1rem; }
+
+  /* SECTION HEADS: stack the section number and title */
+  .section-head {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-head h2 {
+    font-size: 1.5rem;
+    flex: 1 1 100%;
+    order: 2;
+  }
+  .section-head .section-num { order: 1; }
+  .section-head .rule-end {
+    order: 3;
+    flex: 1 1 auto;
+    text-align: left;
+  }
+
+  /* META STRIP: 2-column grid on phone instead of cramming 5 */
+  .meta-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .meta-strip > div {
+    padding: 0.65rem 0.75rem;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .meta-strip > div:nth-child(even) { border-right: none; }
+  .meta-strip > div:nth-last-child(-n+2) { border-bottom: none; }
+  .meta-strip dd { font-size: 1rem; }
+
+  /* GRID-3: stack everything */
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .entry-card { padding: 1.3rem; }
+  .entry-card h3 { font-size: 1.25rem; }
+
+  /* TWO-COL: stack */
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* ==============================
+   * CALCULATORS — the big work
+   * ============================== */
+
+  /* The two-panel split: always stack on mobile */
+  .calc-wrap {
+    grid-template-columns: 1fr !important;
+  }
+  .calc-inputs {
+    border-right: none !important;
+    border-bottom: 1px solid var(--ink);
+    padding: 1.5rem 1.25rem !important;
+    /* Kill the ruled-paper lines on mobile — they don't scale well */
+    background: var(--paper) !important;
+  }
+  .calc-output {
+    padding: 1.5rem 1.25rem !important;
+  }
+
+  /* Calculator input rows: bigger tap targets, full-width inputs */
+  .calc-input-row {
+    margin-bottom: 1.3rem;
+  }
+  .calc-input-row input,
+  .calc-input-row select {
+    font-size: 16px; /* 16px prevents iOS auto-zoom on focus */
+    padding: 0.8rem 0.9rem;
+    width: 100%;
+  }
+  .calc-label {
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Unit toggle: move it BELOW the input on mobile, not beside it */
+  .calc-input-row .unit-toggle {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.6rem;
+  }
+  .calc-input-row .unit-toggle button {
+    flex: 1;
+    padding: 0.65rem 0.4rem;
+    font-size: 0.8rem;
+    min-height: 44px; /* iOS tap target */
+  }
+
+  /* Calculator output: bigger result values, more breathing room */
+  .calc-output h3 { font-size: 1.4rem; }
+  .calc-output .result-line {
+    padding: 0.75rem 0;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+  }
+  .calc-output .result-label {
+    font-size: 0.78rem;
+    flex: 1 1 60%;
+  }
+  .calc-output .result-value {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .calc-output .cost-summary .result-value {
+    font-size: 1.6rem;
+  }
+
+  /* Ingredients list: better mobile reading */
+  ul.ingredients li {
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    padding: 0.6rem 0;
+    font-size: 0.88rem;
+  }
+  ul.ingredients .ingredient-name { flex: 1 1 60%; }
+  ul.ingredients .ingredient-qty { flex-shrink: 0; }
+
+  /* FILMSTRIP: 2-up, smaller text */
+  .filmstrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filmstrip-cell {
+    padding: 1rem 0.85rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .filmstrip-cell:nth-child(even) { border-right: none; }
+  .filmstrip-cell .value { font-size: 1.25rem; }
+  .filmstrip-cell .label { font-size: 0.62rem; }
+
+  /* TABLES: convert wide tables to scrollable wrappers OR card view */
+  table.data {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.78rem;
+  }
+  table.data th, table.data td {
+    padding: 0.55rem 0.7rem;
+  }
+  /* Equipment table has long notes — let those wrap */
+  table.data td:last-child,
+  table.data th:last-child {
+    white-space: normal;
+    min-width: 220px;
+  }
+
+  /* MENU COSTING TABLE: convert to card view for the small screen */
+  /* Detect via class; tables on equipment, glossary, and others stay scrollable */
+  .container > div > table.data,
+  #mce-mount table.data {
+    /* The menu costing table specifically — too many columns */
+    font-size: 0.72rem;
+  }
+
+  /* METHOD steps: smaller numerals, less padding */
+  ol.method li {
+    padding-left: 2.8rem;
+    font-size: 0.98rem;
+    margin-bottom: 1.2rem;
+  }
+  ol.method li::before {
+    font-size: 1.8rem;
+  }
+
+  /* PULL QUOTES */
+  blockquote.pull {
+    font-size: 1.25rem;
+    padding: 1.2rem 0;
+  }
+  blockquote.pull::before {
+    font-size: 3rem;
+    left: 0;
+    top: -0.5rem;
+  }
+
+  /* LEAD */
+  .lead { font-size: 1rem; }
+
+  /* FLOURISH */
+  .flourish { font-size: 1.05rem; }
+
+  /* BUTTONS: bigger tap targets */
+  .btn {
+    padding: 0.85rem 1.4rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .print-spec-btn {
+    margin-left: 0;
+    margin-top: 0.6rem;
+    display: block;
+    text-align: center;
+  }
+
+  /* FOOTER: stack to 2 cols on phone */
+  .colophon { padding: 2.5rem 1rem 1.5rem; }
+  .colophon-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+  }
+  .colophon .imprint {
+    font-size: 1.5rem;
+    grid-column: 1 / -1;
+  }
+
+  /* NOTES */
+  aside.note {
+    padding: 0.7rem 0 0.7rem 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  /* SEARCH on mobile: full-screen-ish */
+  .search-panel {
+    width: calc(100vw - 16px);
+    top: 4vh;
+    max-height: 92vh;
+  }
+  .search-input-wrap input { font-size: 1.15rem; }
+  .search-result {
+    padding: 0.75rem 1rem;
+    gap: 0.7rem;
+  }
+  .search-result-type {
+    width: 60px;
+    font-size: 0.6rem;
+  }
+  .search-result-title { font-size: 0.98rem; }
+  .search-result-subtitle { font-size: 0.78rem; }
+  .search-suggest { font-size: 0.75rem; padding: 0.2rem 0.55rem; }
+
+  /* CALC TOGGLES (in carbonation: bottled vs draft) — full width */
+  .calc-input-row .unit-toggle button {
+    white-space: nowrap;
+  }
+}
+
+/* ============================================================
+ * SMALL PHONE — 480px and below (most phones in portrait)
+ * ============================================================ */
+@media (max-width: 480px) {
+  .brand { font-size: 1.5rem; }
+  .hero h1 { font-size: 2rem; }
+  .recipe-header h1 { font-size: 1.7rem; }
+  .section-head h2 { font-size: 1.3rem; }
+
+  /* Single-column hero meta */
+  .hero-meta { grid-template-columns: 1fr; }
+
+  /* Filmstrip drops to single column on smallest screens */
+  .filmstrip { grid-template-columns: 1fr; }
+  .filmstrip-cell { border-right: none; }
+
+  /* Footer to single column */
+  .colophon-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ============================================================
+ * MENU COSTING — specific mobile card view
+ * Convert the 6-column table to a stack of cards on phone
+ * ============================================================ */
+
+@media (max-width: 760px) {
+  /* The menu costing engine's main pricing table — first table inside #mce-mount */
+  #mce-mount > table.data:first-of-type {
+    display: block;
+    white-space: normal;
+  }
+  #mce-mount > table.data:first-of-type thead {
+    display: none;
+  }
+  #mce-mount > table.data:first-of-type tbody,
+  #mce-mount > table.data:first-of-type tfoot {
+    display: block;
+  }
+  #mce-mount > table.data:first-of-type tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 0.8rem;
+    padding: 1rem 0.85rem;
+    border: 1px solid var(--ink);
+    border-bottom: none;
+    background: var(--paper);
+  }
+  #mce-mount > table.data:first-of-type tbody tr:last-child {
+    border-bottom: 1px solid var(--ink);
+  }
+  #mce-mount > table.data:first-of-type tfoot tr {
+    background: var(--paper-dark);
+    border: 2px solid var(--ink);
+    margin-top: 0.5rem;
+  }
+  #mce-mount > table.data:first-of-type tr:nth-child(even) td { background: transparent; }
+
+  #mce-mount > table.data:first-of-type td {
+    border: none;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    line-height: 1.3;
+  }
+  #mce-mount > table.data:first-of-type td:first-child {
+    grid-column: 1 / -1;
+    font-family: var(--serif-display);
+    font-size: 1.1rem;
+    border-bottom: 1px dotted var(--ink-faint);
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
+  }
+  /* Add labels to the data cells using ::before */
+  #mce-mount > table.data:first-of-type td:nth-child(2)::before { content: "Cost"; }
+  #mce-mount > table.data:first-of-type td:nth-child(3)::before { content: "Menu Price"; }
+  #mce-mount > table.data:first-of-type td:nth-child(4)::before { content: "Pour Cost"; }
+  #mce-mount > table.data:first-of-type td:nth-child(5)::before { content: "Margin"; }
+  #mce-mount > table.data:first-of-type td:nth-child(6)::before { content: "Margin %"; }
+  #mce-mount > table.data:first-of-type td:nth-child(n+2)::before {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-faint);
+    font-weight: normal;
+  }
+  /* Don't show ::before on the first column or in tfoot first cell */
+  #mce-mount > table.data:first-of-type td:first-child::before { display: none; }
+  #mce-mount > table.data:first-of-type td.num { text-align: left; }
+
+  /* The spirit cost editor table — let it stay scrollable */
+  /* (it's the second .data table inside #mce-mount; default mobile table styles apply) */
+
+  /* Menu costing parameters input row */
+  #mce-mount .calc-input-row .small {
+    display: block;
+    margin: 0.4rem 0 0 0 !important;
+    font-size: 0.78rem;
+  }
+}
