@@ -223,7 +223,7 @@ def rows(*items):
 
 
 SLICE = """<svg class="slice" viewBox="0 0 200 200" aria-hidden="true">
-    <circle cx="100" cy="100" r="98" fill="#dfeb5e"/>
+    <circle cx="100" cy="100" r="98" fill="#14171a"/>
     <circle cx="100" cy="100" r="84" fill="none" stroke="#fff" stroke-width="3"/>
     <path stroke="#fff" stroke-width="3" stroke-linecap="round" d="M100 100 100 20M100 100 156.6 43.4M100 100 180 100M100 100 156.6 156.6M100 100 100 180M100 100 43.4 156.6M100 100 20 100M100 100 43.4 43.4"/>
     <circle cx="100" cy="100" r="7" fill="#fff"/>
@@ -478,8 +478,9 @@ def main():
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")
     (ROOT / "favicon.svg").write_text(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">'
-        '<circle cx="24" cy="24" r="22" fill="#dfeb5e" stroke="#1b2114" stroke-width="2.5"/>'
-        '<path d="M24 5v38M5 24h38M10.6 10.6l26.8 26.8M37.4 10.6 10.6 37.4" stroke="#1b2114" stroke-width="2.5"/></svg>\n',
+        '<circle cx="24" cy="24" r="23" fill="#14171a"/>'
+        '<circle cx="24" cy="24" r="19" fill="none" stroke="#fff" stroke-width="1.5"/>'
+        '<path d="M24 6v36M6 24h36M11.3 11.3l25.4 25.4M36.7 11.3 11.3 36.7" stroke="#fff" stroke-width="2"/></svg>\n',
         encoding="utf-8")
     print(f"built {len(urls) + 1} pages")
 
