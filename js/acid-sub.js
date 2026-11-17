@@ -116,7 +116,7 @@ function renderAcidSubCalc(mountId) {
             </div>
           </div>
 
-          <p class="small" style="margin-top:1.5rem; color: rgba(244,237,224,0.55)">
+          <p class="small" style="margin-top:1.5rem; color: rgba(255,255,255,0.55)">
             ${r.profile.note}
           </p>
         </div>

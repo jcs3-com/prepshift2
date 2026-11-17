@@ -283,7 +283,7 @@ function renderCarbonationCalc(mountId) {
             </div>
           </div>
 
-          <p class="small" style="margin-top:1.5rem; color: rgba(244,237,224,0.55)">
+          <p class="small" style="margin-top:1.5rem; color: rgba(255,255,255,0.55)">
             ${mode === "bottled"
               ? "Bottle from a counter-pressure filler. The bottle's headspace must be flushed with CO₂ before filling, or the carbonation will dissipate within seconds. Cap immediately. Store at the dispense temp."
               : "Set CO₂ regulator to the indicated PSI. Allow 24–48 hours at temperature for full equilibration before pouring. Line length matters — shorter lines need higher restriction to balance the pressure."

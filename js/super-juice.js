@@ -110,12 +110,12 @@ function renderSuperJuiceCalc(mountId) {
 
           <div class="cost-summary">
             <div class="result-line" style="border-bottom:none">
-              <span class="result-label">Yield vs. fresh juice<br><span style="font-size:0.7rem; color:rgba(244,237,224,0.4)">same fruit count</span></span>
+              <span class="result-label">Yield vs. fresh juice<br><span style="font-size:0.7rem; color:rgba(255,255,255,0.4)">same fruit count</span></span>
               <span class="result-value accent">${r.multiplier.toFixed(1)}×</span>
             </div>
           </div>
 
-          <p class="small" style="margin-top:1.5rem; color: rgba(244,237,224,0.55)">
+          <p class="small" style="margin-top:1.5rem; color: rgba(255,255,255,0.55)">
             ${r.spec.notes}
           </p>
         </div>

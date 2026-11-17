@@ -1,127 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Prepshift · Recipe</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">Simple Syrup | Prepshift</title>
+  <meta name="description" content="Simple Syrup: batch calculator, costs, method and notes from the Prepshift manual.">
+  <link rel="canonical" href="https://prepshift.com/pages/recipe-simple.html">
+  <meta property="og:site_name" content="Prepshift">
+  <meta property="og:title" content="Simple Syrup | Prepshift">
+  <meta property="og:description" content="Simple Syrup: batch calculator, costs, method and notes from the Prepshift manual.">
+  <meta property="og:url" content="https://prepshift.com/pages/recipe-simple.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
-<body>
-
-  <header class="masthead">
-    <div class="masthead-inner">
-      <a href="../index.html" class="brand">Prepshift<em>.</em></a>
-      <div class="tagline" id="page-kicker">Recipe</div>
-    </div>
+<body data-recipe="simple_syrup">
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site-header">
+    <a class="wordmark" href="/">Prepshift</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/juice/">Juice</a></li><li><a href="/kitchen/">Kitchen</a></li><li><a href="/waste/">Waste</a></li><li><a href="/manual/">Manual</a></li><li><a href="/contact/">Contact</a></li>
+        <li><button type="button" class="search-btn" data-search-open>Search</button></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav class="primary-nav">
-    <ul>
-      <li><a href="../index.html">Index</a></li>
-      <li><a href="../index.html#recipes" class="active">Recipes</a></li>
-      <li><a href="calculators.html">Calculators</a></li>
-      <li><a href="draft.html">Draft & Bottled</a></li>
-      <li><a href="equipment.html">Equipment</a></li>
-      <li><a href="glossary.html">Glossary</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
-
-  <main class="container-narrow">
-
-    <header class="recipe-header fade-up">
-      <div class="kicker" id="rh-kicker"></div>
+  <main id="main" class="manual">
+    <header class="recipe-header">
+      <div class="kicker"><a href="/manual/">Manual</a> / <a href="/manual/#recipes">Recipes</a></div>
       <h1 id="rh-title"></h1>
       <p class="standfirst" id="rh-standfirst"></p>
     </header>
 
-    <dl class="meta-strip fade-up" id="meta-strip"></dl>
+    <dl class="meta-strip" id="meta-strip"></dl>
 
     <!-- CALCULATOR -->
     <div class="section-head">
-      <span class="section-num">§ Tool</span>
-      <h2>Cost & batch calculator</h2>
-      <span class="rule-end">Live</span>
+      <h2>Cost and batch calculator</h2>
     </div>
     <div id="calc-mount"></div>
 
     <!-- METHOD -->
     <div class="section-head">
-      <span class="section-num">§ Method</span>
-      <h2>The procedure</h2>
-      <span class="rule-end">Step by step</span>
+      <h2>Method</h2>
     </div>
     <ol class="method" id="method-list"></ol>
 
     <!-- NOTES -->
     <div class="section-head">
-      <span class="section-num">§ Notes</span>
-      <h2>Working notes</h2>
-      <span class="rule-end">Operator-level</span>
+      <h2>Notes</h2>
     </div>
-    <p id="recipe-notes" style="font-size:1.05rem"></p>
+    <p id="recipe-notes"></p>
 
     <!-- PAIRS WITH -->
     <div class="section-head" style="margin-top:3rem">
-      <span class="section-num">§ Use</span>
       <h2>Pairs with</h2>
-      <span class="rule-end">Drinks downstream</span>
     </div>
-    <div class="filmstrip" id="pairs-strip"></div>
+    <p class="pairs" id="pairs-strip"></p>
 
     <hr class="divider">
 
-    <a href="../index.html" class="btn btn-ghost">← Back to the index</a>
-    <a href="calculators.html" class="btn" style="margin-left:1rem">All calculators →</a>
-    <button class="print-spec-btn" onclick="window.print()">⎙ Print station spec card</button>
-
-    <div class="flourish" style="margin-top:4rem">prepshift</div>
-
+    <a href="/manual/" class="btn btn-ghost">Back to the manual</a>
+    <a href="/pages/calculators.html" class="btn" style="margin-left:1rem">All calculators</a>
+    <button class="print-spec-btn" onclick="window.print()">Print station spec card</button>
   </main>
 
-  <footer class="colophon">
-    <div class="colophon-inner">
+  <footer class="site-footer">
+    <div class="footer-lists">
       <div>
-        <div class="imprint">Prep<span>shift</span><br><em>the working manual</em></div>
-        <p class="small" style="margin-top:1.5rem; color:rgba(244,237,224,0.6)">A bar-prep methodology, published in the open. Bethesda, Maryland.</p>
+        <h2>Prepshift</h2>
+        <ul>
+          <li><a href="/juice/">Juice</a></li><li><a href="/kitchen/">Kitchen</a></li><li><a href="/waste/">Waste</a></li><li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:james@prepshift.com">james@prepshift.com</a></li>
+        </ul>
       </div>
       <div>
-        <h5>Recipes</h5>
-        <a href="recipe-lime.html">Fresh Lime</a>
-        <a href="recipe-lemon.html">Fresh Lemon</a>
-        <a href="recipe-pineapple.html">Fresh Pineapple</a>
-        <a href="recipe-ginger.html">Fresh Ginger</a>
-        <a href="recipe-simple.html">Simple Syrup</a>
-        <a href="recipe-demerara.html">Demerara Syrup</a>
-        <a href="recipe-honey-ginger.html">Honey-Ginger Syrup</a>
-      </div>
-      <div>
-        <h5>Tools</h5>
-        <a href="calculators.html">Core Recipes</a>
-        <a href="super-juice.html">Super Juice</a>
-        <a href="batch-scaler.html">Batch Scaler</a>
-        <a href="acid-sub.html">Acid Substitution</a>
-        <a href="menu-costing.html">Menu Costing</a>
-        <a href="draft.html">Draft & Bottled</a>
-      </div>
-      <div>
-        <h5>More</h5>
-        <a href="equipment.html">Equipment</a>
-        <a href="stories.html">Stories</a>
-        <a href="glossary.html">Glossary</a>
-        <a href="about.html">About</a>
-        <a href="legal.html">Legal</a>
+        <h2>Manual</h2>
+        <ul>
+          <li><a href="/manual/#recipes">Recipes</a></li>
+          <li><a href="/manual/#calculators">Calculators</a></li>
+          <li><a href="/pages/equipment.html">Equipment</a></li>
+          <li><a href="/pages/glossary.html">Glossary</a></li>
+          <li><a href="/data/">Data</a></li>
+        </ul>
       </div>
     </div>
-    <div class="colophon-sub">
-      Prepshift · Vol. I · MMXXVI · Provisional data
-    </div>
+    <p class="sign-off"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="17.5"/><path d="M24 6.5v35M6.5 24h35M11.6 11.6l24.8 24.8M36.4 11.6 11.6 36.4"/></svg><span>&copy; 2026 Prepshift. Washington, DC. <a href="/pages/legal.html">Legal</a></span></p>
   </footer>
+</div>
 
-  <script src="../data/ingredients.js"></script>
-  <script src="../js/calc.js"></script>
-  <script src="../js/recipe-page.js"></script>
-  <script src="../data/extended.js"></script>
-  <script src="../js/search.js"></script>
+  <script src="/data/ingredients.js"></script>
+  <script src="/data/extended.js"></script>
+  <script src="/js/calc.js"></script>
+  <script src="/js/recipe-page.js"></script>
+  <script src="/js/search.js"></script>
 </body>
 </html>

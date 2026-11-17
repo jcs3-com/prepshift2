@@ -14,33 +14,33 @@ const SEARCH_INDEX = (function() {
 
   // 1. Recipes
   const recipeUrlMap = {
-    'fresh_lime': 'pages/recipe-lime.html',
-    'fresh_lemon': 'pages/recipe-lemon.html',
-    'fresh_pineapple': 'pages/recipe-pineapple.html',
-    'fresh_ginger': 'pages/recipe-ginger.html',
-    'simple_syrup': 'pages/recipe-simple.html',
-    'demerara_syrup': 'pages/recipe-demerara.html',
-    'honey_ginger_syrup': 'pages/recipe-honey-ginger.html'
+    'fresh_lime': '/pages/recipe-lime.html',
+    'fresh_lemon': '/pages/recipe-lemon.html',
+    'fresh_pineapple': '/pages/recipe-pineapple.html',
+    'fresh_ginger': '/pages/recipe-ginger.html',
+    'simple_syrup': '/pages/recipe-simple.html',
+    'demerara_syrup': '/pages/recipe-demerara.html',
+    'honey_ginger_syrup': '/pages/recipe-honey-ginger.html'
   };
-  for (const [id, r] of Object.entries(RECIPES || {})) {
+  for (const [id, r] of Object.entries(typeof RECIPES !== 'undefined' ? RECIPES : {})) {
     docs.push({
       type: 'recipe',
       title: r.name,
       subtitle: r.kicker,
-      url: recipeUrlMap[id] || `pages/recipe-${id}.html`,
+      url: recipeUrlMap[id] || `/pages/recipe-${id}.html`,
       body: `${r.italic || ''} ${r.standfirst || ''} ${r.notes || ''} ${(r.pairs_with || []).join(' ')}`,
       tags: ['recipe', 'prep', r.id.includes('syrup') ? 'syrup' : '', (r.id.includes('lime') || r.id.includes('lemon') || r.id.includes('grapefruit')) ? 'citrus' : '']
     });
   }
 
   // 2. Cocktails
-  for (const [id, c] of Object.entries(COCKTAILS || {})) {
+  for (const [id, c] of Object.entries(typeof COCKTAILS !== 'undefined' ? COCKTAILS : {})) {
     const ingNames = c.ingredients.map(i => i.name).join(', ');
     docs.push({
       type: 'cocktail',
       title: c.name,
       subtitle: `${c.style} · ${c.glassware}`,
-      url: 'pages/batch-scaler.html',
+      url: '/pages/batch-scaler.html',
       body: `${ingNames} ${c.method}`,
       tags: ['cocktail', c.style.toLowerCase()]
     });
@@ -48,12 +48,12 @@ const SEARCH_INDEX = (function() {
 
   // 3. Calculators / Tools
   const tools = [
-    { title: 'Cost & Yield Calculators', subtitle: 'Core seven recipes — per-oz, per-liter, per-pour', url: 'pages/calculators.html', body: 'cost yield scale batch ounce liter pour fresh juice simple syrup', tags: ['calculator', 'tool'] },
-    { title: 'Super Juice Calculator', subtitle: 'Nickle Morris / Kevin Kos methodology', url: 'pages/super-juice.html', body: 'super juice lime lemon grapefruit peel citric malic acid blend 3x yield 14 day shelf', tags: ['calculator', 'tool', 'citrus'] },
-    { title: 'Batched Cocktail Scaler', subtitle: 'Single drink to bottle, keg, or jug with dilution and ABV', url: 'pages/batch-scaler.html', body: 'batch scaler dilution ABV bottle keg gallon final alcohol cocktail single serving', tags: ['calculator', 'tool', 'batch'] },
-    { title: 'Acid Substitution Calculator', subtitle: 'Replace fresh citrus with water and food-grade acid', url: 'pages/acid-sub.html', body: 'acid substitution citric malic water lime lemon grapefruit arnold liquid intelligence', tags: ['calculator', 'tool', 'acid'] },
-    { title: 'Menu Costing Engine', subtitle: 'Full menu cost analysis with pour-cost solver', url: 'pages/menu-costing.html', body: 'menu costing pour cost margin price spirit bottle invoice wholesale 18 20 22 percent target', tags: ['calculator', 'tool', 'cost', 'menu'] },
-    { title: 'Carbonation & Dispense Calculator', subtitle: 'Bottled and draft cocktails — PSI, volumes, dilution', url: 'pages/draft.html', body: 'carbonation co2 psi pressure volumes bottle draft tap keg cornelius dispense', tags: ['calculator', 'tool', 'carbonation', 'draft'] }
+    { title: 'Cost & Yield Calculators', subtitle: 'Core seven recipes — per-oz, per-liter, per-pour', url: '/pages/calculators.html', body: 'cost yield scale batch ounce liter pour fresh juice simple syrup', tags: ['calculator', 'tool'] },
+    { title: 'Super Juice Calculator', subtitle: 'Nickle Morris / Kevin Kos methodology', url: '/pages/super-juice.html', body: 'super juice lime lemon grapefruit peel citric malic acid blend 3x yield 14 day shelf', tags: ['calculator', 'tool', 'citrus'] },
+    { title: 'Batched Cocktail Scaler', subtitle: 'Single drink to bottle, keg, or jug with dilution and ABV', url: '/pages/batch-scaler.html', body: 'batch scaler dilution ABV bottle keg gallon final alcohol cocktail single serving', tags: ['calculator', 'tool', 'batch'] },
+    { title: 'Acid Substitution Calculator', subtitle: 'Replace fresh citrus with water and food-grade acid', url: '/pages/acid-sub.html', body: 'acid substitution citric malic water lime lemon grapefruit arnold liquid intelligence', tags: ['calculator', 'tool', 'acid'] },
+    { title: 'Menu Costing Engine', subtitle: 'Full menu cost analysis with pour-cost solver', url: '/pages/menu-costing.html', body: 'menu costing pour cost margin price spirit bottle invoice wholesale 18 20 22 percent target', tags: ['calculator', 'tool', 'cost', 'menu'] },
+    { title: 'Carbonation & Dispense Calculator', subtitle: 'Bottled and draft cocktails — PSI, volumes, dilution', url: '/pages/draft.html', body: 'carbonation co2 psi pressure volumes bottle draft tap keg cornelius dispense', tags: ['calculator', 'tool', 'carbonation', 'draft'] }
   ];
   for (const t of tools) {
     docs.push({ type: 'tool', ...t });
@@ -61,12 +61,15 @@ const SEARCH_INDEX = (function() {
 
   // 4. Static pages / sections
   const pages = [
-    { title: 'Draft & Bottled Cocktails', subtitle: 'The Morgenthaler methodology — bottled, tapped, pre-made', url: 'pages/draft.html', body: 'morgenthaler clyde common bottle keg draft tap carbonation force PSI volumes co2 negroni americano' },
-    { title: 'Equipment List', subtitle: 'The working kit — measurement, juicing, storage, advanced', url: 'pages/equipment.html', body: 'equipment scale champion juicer chinois cornelius keg refractometer ph meter mexican elbow' },
-    { title: 'Glossary & Index', subtitle: 'The trade vocabulary, defined as we use it', url: 'pages/glossary.html', body: 'glossary index vocabulary terms acid abv brix bitters cordial dilution oleo saccharum' },
-    { title: 'About the Work', subtitle: 'What Prepshift was, what it is now', url: 'pages/about.html', body: 'about prepshift bethesda maryland bar prep outsourcing service methodology book' },
-    { title: 'Legal & Notices', subtitle: 'Alcohol, food safety, IP, privacy', url: 'pages/legal.html', body: 'legal alcohol food safety intellectual property affiliate privacy data' },
-    { title: 'Stories', subtitle: 'The origin files — forthcoming', url: 'pages/stories.html', body: 'stories origin route spec sheet pressing grain' }
+    { title: 'Prepshift Juice', subtitle: 'Citrus superjuice for bars and restaurants', url: '/juice/', body: 'juice superjuice super juice wholesale distribution bars restaurants hotels order buy inquiry' },
+    { title: 'Kitchen', subtitle: 'Small-batch products and training', url: '/kitchen/', body: 'kitchen small batch products training sessions restaurant partner team' },
+    { title: 'Waste', subtitle: 'Food waste reduction consulting', url: '/waste/', body: 'food waste reduction consulting process purchasing prep yield holding kitchen bar' },
+    { title: 'Data', subtitle: 'Reference tables: yields, costs and shelf life', url: '/data/', body: 'data database tables reference yield cost shelf life csv download dataset' },
+    { title: 'Contact', subtitle: 'Write to Prepshift', url: '/contact/', body: 'contact email inquiry intake' },
+    { title: 'Draft & Bottled Cocktails', subtitle: 'Bottled, tapped and pre-made', url: '/pages/draft.html', body: 'morgenthaler clyde common bottle keg draft tap carbonation force PSI volumes co2 negroni americano' },
+    { title: 'Equipment List', subtitle: 'Measurement, juicing, storage, advanced', url: '/pages/equipment.html', body: 'equipment scale champion juicer chinois cornelius keg refractometer ph meter mexican elbow' },
+    { title: 'Glossary', subtitle: 'The trade vocabulary, defined as we use it', url: '/pages/glossary.html', body: 'glossary index vocabulary terms acid abv brix bitters cordial dilution oleo saccharum' },
+    { title: 'Legal', subtitle: 'Alcohol, food safety, credit, privacy', url: '/pages/legal.html', body: 'legal alcohol food safety intellectual property privacy data' }
   ];
   for (const p of pages) {
     docs.push({ type: 'page', ...p });
@@ -80,7 +83,7 @@ const SEARCH_INDEX = (function() {
           type: 'equipment',
           title: item.name,
           subtitle: `${cat.title} · ${item.brand_ref} · $${item.price}`,
-          url: 'pages/equipment.html',
+          url: '/pages/equipment.html',
           body: `${item.note} ${item.priority}`,
           tags: ['equipment', cat.title.toLowerCase()]
         });
@@ -132,7 +135,7 @@ const SEARCH_INDEX = (function() {
       type: 'glossary',
       title: g.term,
       subtitle: g.def,
-      url: 'pages/glossary.html',
+      url: '/pages/glossary.html',
       body: `${g.term} ${g.def}`,
       tags: ['glossary', 'term']
     });
@@ -157,9 +160,6 @@ function searchPrepshift(query, limit = 20) {
   const q = query.toLowerCase().trim();
   const tokens = q.split(/\s+/).filter(t => t.length > 0);
 
-  // For path-detection — search runs from either / or /pages/
-  const inPagesDir = window.location.pathname.includes('/pages/');
-  const prefix = inPagesDir ? '../' : '';
 
   const results = [];
   for (const doc of SEARCH_INDEX) {
@@ -178,7 +178,7 @@ function searchPrepshift(query, limit = 20) {
       if (tagsLower.includes(t)) score += 0.5;
     }
     if (score > 0) {
-      results.push({ ...doc, score, resolvedUrl: prefix + doc.url });
+      results.push({ ...doc, score, resolvedUrl: doc.url });
     }
   }
 
@@ -194,23 +194,8 @@ function searchPrepshift(query, limit = 20) {
  * Closed by Escape, clicking the backdrop, or selecting a result.
  */
 function initPrepshiftSearch() {
-  // Inject the search button into the masthead
-  const masthead = document.querySelector('.masthead-inner');
-  if (masthead) {
-    const searchBtn = document.createElement('button');
-    searchBtn.className = 'masthead-search-btn';
-    searchBtn.setAttribute('aria-label', 'Open search');
-    searchBtn.innerHTML = `
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" style="vertical-align:middle">
-        <circle cx="7" cy="7" r="5"/>
-        <path d="M11 11l3.5 3.5"/>
-      </svg>
-      <span class="search-btn-label">Search</span>
-      <kbd class="search-btn-kbd">/</kbd>
-    `;
-    masthead.appendChild(searchBtn);
-    searchBtn.addEventListener('click', openSearch);
-  }
+  // The header carries a Search button on every page
+  document.querySelectorAll('[data-search-open]').forEach(btn => btn.addEventListener('click', openSearch));
 
   // Inject the search modal at end of body
   const modal = document.createElement('div');
@@ -225,8 +210,8 @@ function initPrepshiftSearch() {
           <circle cx="7" cy="7" r="5"/>
           <path d="M11 11l3.5 3.5"/>
         </svg>
-        <input type="text" id="search-input" placeholder="Search recipes, calculators, glossary…" autocomplete="off" spellcheck="false">
-        <button class="search-close" aria-label="Close search">✕</button>
+        <input type="text" id="search-input" placeholder="Search recipes, calculators, glossary" aria-label="Search the site" autocomplete="off" spellcheck="false">
+        <button class="search-close" aria-label="Close search">Close</button>
       </div>
       <div class="search-results" id="search-results">
         <div class="search-empty">
@@ -263,14 +248,11 @@ function initPrepshiftSearch() {
   }
 
   function typeLabel(type) {
-    const map = { recipe: 'Recipe', cocktail: 'Cocktail', tool: 'Tool', page: 'Section', equipment: 'Equipment', glossary: 'Glossary' };
+    const map = { recipe: 'Recipe', cocktail: 'Cocktail', tool: 'Tool', page: 'Page', equipment: 'Equipment', glossary: 'Glossary' };
     return map[type] || type;
   }
 
-  function typeColor(type) {
-    const map = { recipe: 'var(--oxblood)', cocktail: 'var(--ochre)', tool: 'var(--oxblood)', page: 'var(--ink)', equipment: 'var(--olive)', glossary: 'var(--ink-faint)' };
-    return map[type] || 'var(--ink)';
-  }
+  function typeColor() { return 'var(--pith)'; }
 
   function renderResults(query) {
     if (!query || query.length === 0) {

@@ -1,0 +1,5 @@
+# GitHub Pages builds this repo with Jekyll. The site is plain static files,
+# so Jekyll only needs to know what not to publish. Folders that start with
+# an underscore (like _src) are skipped automatically.
+exclude:
+  - README.md

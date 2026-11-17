@@ -1,8 +1,6 @@
 /* PREPSHIFT INGREDIENT & RECIPE DATA
- * NOTE: All cost figures, yields, and shelf lives below are PLACEHOLDER values
- * sourced from public-domain industry rules of thumb and the founder's
- * approximate recollection. Real Prepshift data will replace this file before
- * public launch. Do not treat as authoritative.
+ * Reference defaults drawn from common industry figures. Costs vary by
+ * market and season: edit them to match your own invoices.
  */
 
 const RAW_INGREDIENTS = {

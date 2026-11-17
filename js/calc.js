@@ -121,7 +121,7 @@ function renderCalculator(recipeId, mountId) {
           <h4>Batch Size</h4>
           <div class="calc-input-row">
             <label class="calc-label">Target Yield</label>
-            <input type="number" id="${mountId}-yield" value="${fmtNum(displayVal, unit === "ml" ? 0 : 2)}" step="${stepVal}" min="1">
+            <input type="number" id="${mountId}-yield" value="${unit === "ml" ? Math.round(displayVal) : Number(displayVal.toFixed(2))}" step="${stepVal}" min="1">
             <div class="unit-toggle" id="${mountId}-units">
               <button data-unit="ml"   class="${unit === 'ml' ? 'active' : ''}">mL</button>
               <button data-unit="floz" class="${unit === 'floz' ? 'active' : ''}">fl oz</button>
@@ -162,7 +162,7 @@ function renderCalculator(recipeId, mountId) {
             </div>
           </div>
 
-          <p class="small" style="margin-top:1.5rem; color: rgba(244,237,224,0.55)">
+          <p class="small" style="margin-top:1.5rem; color: rgba(255,255,255,0.55)">
             Costs are based on ${recipe.inputs.length === 1 ? "single-ingredient" : "blended"} input prices and assume the documented yield. Real-world variance: ±15%. Adjust your menu costing accordingly.
           </p>
         </div>

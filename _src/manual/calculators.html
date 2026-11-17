@@ -1,0 +1,136 @@
+<!-- wide: no -->
+    <header class="recipe-header">
+      <div class="kicker"><a href="/manual/">Manual</a> / Calculators</div>
+      <h1>Cost & Yield Calculators</h1>
+      <p class="standfirst">
+        Scale any core recipe to any batch size. Get cost per ounce, per liter, and per cocktail pour in real time. Built for menu engineering and station prep lists — not for show.
+      </p>
+    </header>
+
+    <aside class="note">
+      <span class="note-label">How to use</span>
+      Pick a recipe, then enter a target yield in mL, fl oz or liters. Ingredient quantities and costs update as you type. Prices are reference defaults, so check them against your own invoices.
+    </aside>
+
+    <!-- ADVANCED CALCULATORS LINK CARDS -->
+    <div class="section-head" style="margin-top:3rem">
+      <h2>Specialized tools</h2>
+    </div>
+
+    <div class="grid-3" style="margin-top:1.5rem">
+      <a class="entry-card" href="/pages/super-juice.html">
+        <h3>Super Juice Calculator</h3>
+        <p>Stretch a pound of citrus into three pounds of juice with a 2-week shelf life. Nickle Morris methodology, costed.</p>
+      </a>
+      <a class="entry-card" href="/pages/batch-scaler.html">
+        <h3>Batched Cocktail Scaler</h3>
+        <p>Single-serving spec to any batch size, with proper dilution math, final ABV, container fit, and house ingredient cost.</p>
+      </a>
+      <a class="entry-card" href="/pages/acid-sub.html">
+        <h3>Acid Substitution</h3>
+        <p>Replace fresh citrus with water and food-grade acid. Arnold's methodology. Controversial — use sparingly, know what you're trading.</p>
+      </a>
+      <a class="entry-card" href="/pages/menu-costing.html">
+        <h3>Menu Costing Engine</h3>
+        <p>Enter your bottle costs once. See every drink on the menu costed, priced, and margin-analyzed instantly.</p>
+      </a>
+      <a class="entry-card" href="/pages/draft.html">
+        <h3>Draft &amp; Bottled Cocktails</h3>
+        <p>Force-carbonation, bottling protocol, draft line setup. Live calculator. The Morgenthaler methodology, fully documented.</p>
+      </a>
+      <a class="entry-card" href="/pages/equipment.html">
+        <h3>The Working Kit</h3>
+        <p>Every tool a serious prep program actually needs, ranked by priority. Essentials, high-priority, useful, and advanced.</p>
+      </a>
+    </div>
+
+
+    <!-- LIME -->
+    <section id="lime">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Fresh Lime Juice</h2>
+        <span class="rule-end"><a href="/pages/recipe-lime.html">Full recipe</a></span>
+      </div>
+      <div id="calc-lime"></div>
+    </section>
+
+    <!-- LEMON -->
+    <section id="lemon">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Fresh Lemon Juice</h2>
+        <span class="rule-end"><a href="/pages/recipe-lemon.html">Full recipe</a></span>
+      </div>
+      <div id="calc-lemon"></div>
+    </section>
+
+    <!-- PINEAPPLE -->
+    <section id="pineapple">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Fresh Pineapple Juice</h2>
+        <span class="rule-end"><a href="/pages/recipe-pineapple.html">Full recipe</a></span>
+      </div>
+      <div id="calc-pineapple"></div>
+    </section>
+
+    <!-- GINGER -->
+    <section id="ginger">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Fresh Ginger Juice</h2>
+        <span class="rule-end"><a href="/pages/recipe-ginger.html">Full recipe</a></span>
+      </div>
+      <div id="calc-ginger"></div>
+    </section>
+
+    <!-- SIMPLE -->
+    <section id="simple">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Simple Syrup</h2>
+        <span class="rule-end"><a href="/pages/recipe-simple.html">Full recipe</a></span>
+      </div>
+      <div id="calc-simple"></div>
+    </section>
+
+    <!-- DEMERARA -->
+    <section id="demerara">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Demerara Syrup (2:1)</h2>
+        <span class="rule-end"><a href="/pages/recipe-demerara.html">Full recipe</a></span>
+      </div>
+      <div id="calc-demerara"></div>
+    </section>
+
+    <!-- HONEY-GINGER -->
+    <section id="honey-ginger">
+      <div class="section-head" style="margin-top:3rem">
+        <h2>Honey-Ginger Syrup</h2>
+        <span class="rule-end"><a href="/pages/recipe-honey-ginger.html">Full recipe</a></span>
+      </div>
+      <div id="calc-honey-ginger"></div>
+    </section>
+
+    <hr class="divider">
+
+    <div class="section-head">
+      <h2>On the calendar</h2>
+    </div>
+
+    <ul class="ingredients">
+      <li><span class="ingredient-name">Cordial &amp; Liqueur Costing Module — full sweetener-acid-aromatics tree</span><span class="ingredient-qty">2027</span></li>
+      <li><span class="ingredient-name">Inventory Par-Level &amp; Reorder Engine — connects to Toast / Square API</span><span class="ingredient-qty">2027</span></li>
+      <li><span class="ingredient-name">Service Cost Tracker — bartender labor, garnish, dish costs layered on pour cost</span><span class="ingredient-qty">2027</span></li>
+      <li><span class="ingredient-name">Clarification Calculator — agar, milk-wash, centrifuge yield estimation</span><span class="ingredient-qty">2027</span></li>
+      <li><span class="ingredient-name">Recipe Versioning System — multi-spec recipe trees with version history</span><span class="ingredient-qty">2028</span></li>
+    </ul>
+
+  
+<!-- scripts -->
+<script src="/js/calc.js"></script>
+<script>
+    renderCalculator('fresh_lime',         'calc-lime');
+    renderCalculator('fresh_lemon',        'calc-lemon');
+    renderCalculator('fresh_pineapple',    'calc-pineapple');
+    renderCalculator('fresh_ginger',       'calc-ginger');
+    renderCalculator('simple_syrup',       'calc-simple');
+    renderCalculator('demerara_syrup',     'calc-demerara');
+    renderCalculator('honey_ginger_syrup', 'calc-honey-ginger');
+  </script>

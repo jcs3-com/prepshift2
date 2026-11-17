@@ -18,18 +18,12 @@
 
   const recipe = RECIPES[recipeId];
   if (!recipe) {
-    document.querySelector('main').innerHTML = '<h1>Recipe not found</h1><p>Return to the <a href="../index.html">index</a>.</p>';
+    document.querySelector('main').innerHTML = '<h1>Recipe not found</h1><p>Return to the <a href="/manual/">manual</a>.</p>';
     return;
   }
 
-  document.getElementById('page-title').textContent = `Prepshift · ${recipe.name}`;
-  document.getElementById('page-kicker').textContent = recipe.kicker;
-  document.getElementById('rh-kicker').textContent = recipe.kicker;
-  document.getElementById('rh-title').innerHTML = recipe.name.split(' ').map((w, i, arr) => {
-    // italicize the last word for visual emphasis
-    if (i === arr.length - 1 && arr.length > 1) return `<em>${w}</em>`;
-    return w;
-  }).join(' ');
+  document.getElementById('page-title').textContent = `${recipe.name} | Prepshift`;
+  document.getElementById('rh-title').textContent = recipe.name;
   document.getElementById('rh-standfirst').textContent = recipe.standfirst;
 
   // Meta strip
@@ -37,7 +31,7 @@
   const metaItems = [
     { dt: 'Yield', dd: `${recipe.yield_ml} mL (${(recipe.yield_ml / 29.5735).toFixed(0)} fl oz)` },
     { dt: 'Prep time', dd: `${recipe.prep_min} min` },
-    { dt: 'Shelf life', dd: recipe.shelf_hr >= 24 ? `${(recipe.shelf_hr/24).toFixed(0)} days` : `${recipe.shelf_hr} hr` },
+    { dt: 'Shelf life', dd: recipe.shelf_hr >= 48 ? `${Math.round(recipe.shelf_hr / 24)} days` : `${recipe.shelf_hr} hours` },
     { dt: 'Storage', dd: '38°F, sealed' },
     { dt: 'Difficulty', dd: recipe.id === 'simple_syrup' ? 'Trivial' : (recipe.id === 'fresh_ginger' ? 'Moderate' : 'Easy') }
   ];
@@ -55,7 +49,5 @@
   document.getElementById('recipe-notes').textContent = recipe.notes;
 
   // Pairs with
-  document.getElementById('pairs-strip').innerHTML = recipe.pairs_with.map(p =>
-    `<div class="filmstrip-cell"><div class="label">Cocktail</div><div class="value" style="font-size:1.2rem">${p}</div></div>`
-  ).join('');
+  document.getElementById('pairs-strip').textContent = recipe.pairs_with.join(', ');
 })();

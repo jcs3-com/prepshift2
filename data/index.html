@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">Data | Bar prep reference tables | Prepshift</title>
+  <meta name="description" content="Reference tables for bar prep: ingredient yields and costs, preparation hold times and super juice build ratios. Filter them or download CSV.">
+  <link rel="canonical" href="https://prepshift.com/data/">
+  <meta property="og:site_name" content="Prepshift">
+  <meta property="og:title" content="Data | Bar prep reference tables | Prepshift">
+  <meta property="og:description" content="Reference tables for bar prep: ingredient yields and costs, preparation hold times and super juice build ratios. Filter them or download CSV.">
+  <meta property="og:url" content="https://prepshift.com/data/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site-header">
+    <a class="wordmark" href="/">Prepshift</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/juice/">Juice</a></li><li><a href="/kitchen/">Kitchen</a></li><li><a href="/waste/">Waste</a></li><li><a href="/manual/">Manual</a></li><li><a href="/contact/">Contact</a></li>
+        <li><button type="button" class="search-btn" data-search-open>Search</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="wide">
+    <h1 class="statement indent">Reference tables for bar prep: yields, costs and shelf life.</h1>
+    <p class="lede indent">These are reference values. Costs are defaults, so set your own in the <a href="/pages/calculators.html">calculators</a>.</p>
+
+    <div class="table-tools">
+      <div class="field">
+        <label for="data-filter">Filter the tables</label>
+        <input id="data-filter" type="search" placeholder="lime, syrup, acid" autocomplete="off">
+      </div>
+      <p class="form-note" id="data-status" role="status"></p>
+    </div>
+    <div id="data-tables"></div>
+
+    <div class="rows">
+    <section class="row">
+      <h2>Production data</h2>
+      <div class="row-body">
+        <p>Prepshift&rsquo;s production dataset is shared on request. Tell us who you are and what you&rsquo;d use it for.</p>
+      </div>
+    </section>
+    <section class="row">
+      <h2>Request it</h2>
+      <div class="row-body">
+      <form class="intake" id="ask" data-intake data-topic="Data access" data-to="james@prepshift.com">
+        <div class="field"><label for="ask-name">Your name</label><input id="ask-name" name="Name" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="ask-business">Organization</label><input id="ask-business" name="Business" type="text" required autocomplete="organization"></div>
+        <div class="field"><label for="ask-use">What you&#x27;d use it for</label><textarea id="ask-use" name="Use" rows="4" required></textarea></div>
+        <div><button type="submit" class="btn btn-solid">Open in my email app</button></div>
+        <p class="form-note">This writes an email in your own mail app, addressed to james@prepshift.com. Nothing is sent or stored by this site.</p>
+        <div class="intake-fallback" data-intake-fallback aria-live="polite" hidden>
+          <p>Your email app should be opening with this message. If it doesn't, copy it and send it to <a href="mailto:james@prepshift.com">james@prepshift.com</a>.</p>
+          <pre></pre>
+          <button type="button" class="btn" data-intake-copy>Copy message</button>
+        </div>
+      </form>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-lists">
+      <div>
+        <h2>Prepshift</h2>
+        <ul>
+          <li><a href="/juice/">Juice</a></li><li><a href="/kitchen/">Kitchen</a></li><li><a href="/waste/">Waste</a></li><li><a href="/contact/">Contact</a></li>
+          <li><a href="mailto:james@prepshift.com">james@prepshift.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Manual</h2>
+        <ul>
+          <li><a href="/manual/#recipes">Recipes</a></li>
+          <li><a href="/manual/#calculators">Calculators</a></li>
+          <li><a href="/pages/equipment.html">Equipment</a></li>
+          <li><a href="/pages/glossary.html">Glossary</a></li>
+          <li><a href="/data/">Data</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="sign-off"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="22"/><circle cx="24" cy="24" r="17.5"/><path d="M24 6.5v35M6.5 24h35M11.6 11.6l24.8 24.8M36.4 11.6 11.6 36.4"/></svg><span>&copy; 2026 Prepshift. Washington, DC. <a href="/pages/legal.html">Legal</a></span></p>
+  </footer>
+</div>
+
+  <script src="/data/ingredients.js"></script>
+  <script src="/data/extended.js"></script>
+  <script src="/js/calc.js"></script>
+  <script src="/js/data-tables.js"></script>
+  <script src="/js/intake.js"></script>
+  <script src="/js/search.js"></script>
+</body>
+</html>

@@ -148,12 +148,12 @@ function renderBatchScaler(mountId) {
 
           <div class="cost-summary">
             <div class="result-line" style="border-bottom:none">
-              <span class="result-label">House ingredient cost<br><span style="font-size:0.7rem; color:rgba(244,237,224,0.4)">excl. spirits — fill in your bottle cost separately</span></span>
+              <span class="result-label">House ingredient cost<br><span style="font-size:0.7rem; color:rgba(255,255,255,0.4)">excl. spirits — fill in your bottle cost separately</span></span>
               <span class="result-value accent">${fmtMoneyLocal(r.houseIngredientCost)}</span>
             </div>
           </div>
 
-          <p class="small" style="margin-top:1.5rem; color: rgba(244,237,224,0.55)">
+          <p class="small" style="margin-top:1.5rem; color: rgba(255,255,255,0.55)">
             Batch in this order: combine all spirits and modifiers first, then citrus and house ingredients, then water last. Chill to 28°F before service. Store carbonated batches at 36°F under 30 PSI if you're force-carbing.
           </p>
         </div>

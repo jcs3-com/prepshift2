@@ -1,7 +1,7 @@
 /* PREPSHIFT EXTENDED DATA
- * Super juice, batched cocktail templates, equipment, stories.
+ * Super juice, batched cocktail templates, equipment.
  * Methodology references public Kevin Kos / Nickle Morris / Morgenthaler work,
- * adapted with Prepshift placeholder defaults. Real production specs pending.
+ * with reference defaults.
  */
 
 /* ---------- SUPER JUICE METHODOLOGY ----------
@@ -211,31 +211,3 @@ const EQUIPMENT = {
     ]
   }
 };
-
-/* ---------- STORIES (placeholder scaffold) ---------- */
-const STORIES = [
-  {
-    slug: "pressing-against-the-grain",
-    title: "Pressing Against the Grain",
-    dek: "On why every bar in 2008 was using bottled juice and why every serious one in 2026 is not.",
-    date: "Forthcoming",
-    section: "Origin",
-    excerpt: "There is a particular kind of denial that grips a bar program when it tells itself the lime juice is fine. It is not fine. It was never fine. This is the story of how I stopped pretending..."
-  },
-  {
-    slug: "the-spec-sheet",
-    title: "The Spec Sheet",
-    dek: "How Prepshift's costing model worked, and why most bar programs are running blind.",
-    date: "Forthcoming",
-    section: "Method",
-    excerpt: "When I first sat down with a head bartender to walk through pour-cost on a single drink at his menu price, he discovered that one of his bestsellers was actively losing him money. He had no idea..."
-  },
-  {
-    slug: "on-the-route",
-    title: "On the Route",
-    dek: "What it actually looks like to deliver bar prep at scale to twenty restaurants in one morning.",
-    date: "Forthcoming",
-    section: "Operations",
-    excerpt: "By 6 AM the truck was loaded. By 11 it was empty. In between, two dozen bartenders received exactly what they needed for the next four days of service, costed, dated, and ready..."
-  }
-];

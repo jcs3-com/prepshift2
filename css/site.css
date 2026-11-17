@@ -1,0 +1,406 @@
+/* Prepshift site styles.
+   White page, leaf-black ink, one citrus highlighter. Spectral speaks,
+   IBM Plex Sans Condensed labels, IBM Plex Mono counts. */
+
+:root {
+  --paper: #ffffff;
+  --ink: #1b2114;
+  --pith: #6b7263;
+  --hair: #d8dccf;
+  --wash: #f4f6ea;
+  --zest: #dfeb5e;
+  --blood: #a63a1e;
+  --amber: #a87900;
+
+  --serif: 'Spectral', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --sans: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --measure: 36rem;      /* reading width */
+  --column: 54rem;       /* content column; the right of the page stays empty */
+  --label: 8.5rem;       /* row label width */
+  --gutter: 1.5rem;
+  --indent: calc(var(--label) + var(--gutter));
+
+  /* names the calculator scripts still reference */
+  --paper-dark: var(--wash);
+  --ink-soft: var(--ink);
+  --ink-faint: var(--pith);
+  --rule: var(--ink);
+  --oxblood: var(--blood);
+  --oxblood-deep: var(--blood);
+  --ochre: var(--amber);
+  --olive: #5a6b2c;
+  --stain: var(--wash);
+  --serif-display: var(--serif);
+  --serif-body: var(--serif);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
+h1, h2, h3 { font-weight: 300; text-wrap: balance; }
+img, svg { max-width: 100%; }
+strong { font-weight: 600; }
+
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+code, kbd, .mono { font-family: var(--mono); font-size: 0.9em; }
+kbd { border: 1px solid var(--hair); padding: 0 0.3em; }
+
+.wrap { max-width: 74rem; margin: 0 auto; padding-inline: clamp(1.5rem, 6vw, 4rem); }
+main { max-width: var(--column); }
+main.wide { max-width: 66rem; }
+
+.skip { position: absolute; left: -100vw; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--zest); padding: 0.5rem 0.75rem; z-index: 60; }
+
+/* ---------- header ---------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  padding-block: clamp(2.25rem, 8vw, 7rem) clamp(2.5rem, 6vw, 5rem);
+}
+
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav ul { display: flex; flex-wrap: wrap; gap: 0.35rem 1.75rem; list-style: none; margin: 0; padding: 0; }
+
+.site-nav a,
+.search-btn {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 0.2rem 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+}
+.site-nav a:hover, .search-btn:hover { border-bottom-color: var(--zest); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--ink); }
+
+/* ---------- the statement: the one loud thing ---------- */
+
+.statement {
+  font-weight: 300;
+  font-size: clamp(1.75rem, 1.15rem + 2.3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  max-width: 21em;
+  text-wrap: pretty;
+}
+
+/* links in the statement are marked the way a prep list gets marked */
+.statement a, .mark {
+  text-decoration: none;
+  background-image: linear-gradient(var(--zest), var(--zest));
+  background-repeat: no-repeat;
+  background-size: 100% 0.4em;
+  background-position: 0 86%;
+  transition: background-size 0.16s ease-out;
+}
+.statement a:hover, .statement a:focus-visible, a.mark:hover, a.mark:focus-visible { background-size: 100% 100%; }
+
+.lede { font-size: 1.25rem; line-height: 1.5; font-weight: 300; max-width: var(--measure); margin-top: 1.5rem; }
+
+/* ---------- rows: label on the left, substance on the right ---------- */
+
+.rows { margin-top: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--ink); }
+.rows > .row:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  padding-block: clamp(2rem, 5vw, 3.25rem);
+  border-bottom: 1px solid var(--ink);
+}
+.row > h2 { font-size: 1.5rem; line-height: 1.25; }
+.row-body { max-width: var(--measure); min-width: 0; }
+.row-body > * + * { margin-top: 1rem; }
+.row-body.full { max-width: none; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; padding-top: 0.5rem; }
+
+.plain-list { list-style: none; padding: 0; margin: 0; }
+.plain-list li { padding: 0.15rem 0; }
+.plain-list.cols { columns: 2 12rem; column-gap: 2.5rem; }
+.plain-list a { text-decoration-color: var(--hair); }
+.plain-list a:hover { background: var(--zest); }
+
+@media (min-width: 48rem) {
+  .row { grid-template-columns: var(--label) minmax(0, 1fr); gap: var(--gutter); }
+  .indent { margin-left: var(--indent); }
+}
+
+/* body links pick up the marker on hover */
+main a:not([class]):hover, .site-footer a:hover { background: var(--zest); }
+
+/* ---------- buttons ---------- */
+
+.btn, .print-spec-btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.btn:hover, .print-spec-btn:hover { background: var(--zest); }
+.btn-solid { background: var(--ink); color: var(--paper); }
+.btn-solid:hover { background: var(--zest); color: var(--ink); }
+.btn-ghost { border-color: transparent; padding-inline: 0; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.print-spec-btn { margin-left: 1rem; }
+
+/* ---------- intake forms (they compose an email; nothing is stored) ---------- */
+
+.intake { display: grid; gap: 1.25rem; max-width: var(--measure); }
+.field label { display: block; font-family: var(--sans); font-weight: 500; font-size: 1rem; margin-bottom: 0.35rem; }
+.field .optional { font-weight: 400; color: var(--pith); }
+.field input, .field select, .field textarea {
+  display: block;
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.4;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+.field textarea { min-height: 6.5rem; resize: vertical; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 5px var(--zest); }
+.form-note { font-family: var(--sans); font-size: 0.9375rem; line-height: 1.45; color: var(--pith); }
+.intake-fallback { border: 1px solid var(--ink); background: var(--wash); padding: 1rem 1.1rem; }
+.intake-fallback p { font-family: var(--sans); font-size: 1rem; line-height: 1.45; }
+.intake-fallback pre { font-family: var(--mono); font-size: 0.875rem; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0.75rem 0; padding: 0.75rem; background: var(--paper); border: 1px solid var(--hair); }
+
+/* ---------- footer ---------- */
+
+.site-footer { max-width: var(--column); margin-top: clamp(3rem, 7vw, 5rem); padding-bottom: 3rem; border-top: 1px solid var(--ink); }
+.footer-lists { display: grid; grid-template-columns: repeat(2, minmax(0, 16rem)); gap: 2rem; padding-top: 2.5rem; }
+.footer-lists h2 { font-size: 1.375rem; margin-bottom: 0.6rem; }
+.footer-lists ul { list-style: none; padding: 0; margin: 0; font-size: 1rem; line-height: 1.75; }
+.footer-lists a { text-decoration: none; }
+.sign-off { display: flex; align-items: center; gap: 0.75rem; margin-top: 4rem; font-size: 0.9375rem; color: var(--pith); }
+.sign-off svg { width: 1.5rem; height: 1.5rem; flex: none; color: var(--ink); }
+
+/* ---------- manual pages: recipes, calculators, reference ---------- */
+
+.container, .container-narrow { padding: 0; margin: 0; }
+.manual p, .manual > ol, .manual > ul { max-width: 40rem; }
+.manual p { margin-bottom: 1rem; }
+.manual h3 { font-weight: 400; font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.5rem; }
+.manual h4, .calc-inputs h4 { font-family: var(--sans); font-weight: 600; font-size: 1rem; line-height: 1.3; margin-bottom: 0.6rem; }
+.manual h5 { font-family: var(--sans); font-weight: 600; font-size: 0.9375rem; }
+
+.recipe-header { margin-bottom: 2.5rem; }
+.recipe-header .kicker { font-family: var(--sans); font-size: 1rem; color: var(--pith); margin-bottom: 1.25rem; }
+.recipe-header .kicker a { color: var(--ink); }
+.recipe-header h1 { font-size: clamp(2rem, 1.4rem + 2.3vw, 2.75rem); line-height: 1.12; letter-spacing: -0.012em; margin-bottom: 1rem; }
+.recipe-header h1 em { font-style: normal; }
+.standfirst { font-size: 1.25rem; line-height: 1.5; font-weight: 300; max-width: var(--measure) !important; margin-bottom: 0 !important; }
+
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 1.5rem; border-top: 1px solid var(--ink); padding-top: 1.25rem; margin: 3.5rem 0 1.5rem; }
+.section-head h2 { font-size: 1.5rem; line-height: 1.25; flex: 1 1 auto; }
+.section-num { display: none; }
+.rule-end { font-family: var(--sans); font-size: 0.9375rem; color: var(--pith); }
+.rule-end:empty { display: none; }
+.rule-end a { color: var(--ink); }
+
+aside.note { background: var(--wash); padding: 1rem 1.25rem; margin: 1.75rem 0; font-size: 1rem; line-height: 1.55; max-width: 40rem; }
+.note-label { display: block; font-family: var(--sans); font-weight: 600; font-size: 0.9375rem; margin-bottom: 0.25rem; }
+
+blockquote.pull { font-weight: 300; font-size: 1.5rem; line-height: 1.35; max-width: 36rem; margin: 2.5rem 0; padding: 0.25rem 0 0.25rem 1.5rem; border-left: 0.5rem solid var(--zest); }
+
+ol.method { list-style: none; counter-reset: step; padding: 0; margin: 1.5rem 0; }
+ol.method li { counter-increment: step; position: relative; padding-left: 2.75rem; margin-bottom: 1.1rem; }
+ol.method li::before { content: counter(step); position: absolute; left: 0; top: 0.3em; font-family: var(--mono); font-size: 0.875rem; line-height: 1.6; color: var(--pith); }
+
+ul.ingredients { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--ink); max-width: none; }
+ul.ingredients li { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--hair); font-family: var(--sans); font-size: 1rem; line-height: 1.4; }
+.ingredient-qty { font-family: var(--mono); font-size: 0.9375rem; white-space: nowrap; }
+
+.meta-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); gap: 1rem 2rem; margin: 2rem 0 0; padding: 1.25rem 0 0; border-top: 1px solid var(--ink); }
+.meta-strip dt { font-family: var(--sans); font-size: 0.9375rem; color: var(--pith); }
+.meta-strip dd { font-size: 1.125rem; }
+
+.filmstrip { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 1.25rem 2rem; margin: 1.75rem 0; padding: 1.25rem 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.filmstrip-cell .label { font-family: var(--sans); font-size: 0.9375rem; color: var(--pith); }
+.filmstrip-cell .value { font-weight: 300; font-size: 1.5rem; line-height: 1.3; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0 2.5rem; margin: 1.5rem 0; }
+.entry-card { display: block; padding: 1.25rem 0; border-top: 1px solid var(--hair); text-decoration: none; }
+.entry-card h3 { display: inline; font-weight: 400; font-size: 1.25rem; }
+.entry-card:hover h3 { background: var(--zest); }
+.entry-card p { font-size: 1rem; line-height: 1.5; color: var(--pith); margin: 0.4rem 0 0; }
+
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; margin: 1.5rem 0; }
+
+hr.divider { border: 0; border-top: 1px solid var(--hair); margin: 3rem 0 2rem; }
+hr.divider-dotted { border: 0; border-top: 1px solid var(--hair); margin: 2rem 0; }
+
+.pairs { font-weight: 300; font-size: 1.375rem; line-height: 1.4; }
+.small { font-size: 0.9375rem; line-height: 1.5; color: var(--pith); }
+.center { text-align: left; }
+.lead { font-size: 1.125rem; }
+
+/* calculators */
+.calc-wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--ink); margin: 1.5rem 0 3rem; }
+.calc-inputs, .calc-output { padding: 1.75rem; min-width: 0; }
+.calc-inputs { border-right: 1px solid var(--ink); }
+.calc-label { display: block; font-family: var(--sans); font-weight: 500; font-size: 1rem; margin-bottom: 0.4rem; }
+.calc-input-row { margin-bottom: 1.4rem; }
+.calc-input-row input, .calc-input-row select, .spirit-input {
+  font-family: var(--mono);
+  font-size: 1.0625rem;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+.calc-input-row select { appearance: none; -webkit-appearance: none; padding-right: 2.25rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%231b2114' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.8rem center; }
+.calc-input-row input:focus-visible, .calc-input-row select:focus-visible, .spirit-input:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 5px var(--zest); }
+.unit-toggle { display: inline-flex; border: 1px solid var(--ink); margin-top: 0.6rem; }
+.unit-toggle button { font-family: var(--sans); font-size: 0.9375rem; padding: 0.35rem 0.8rem; border: 0; border-right: 1px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; }
+.unit-toggle button:last-child { border-right: 0; }
+.unit-toggle button.active { background: var(--ink); color: var(--paper); }
+
+.calc-output { background: var(--ink); color: var(--paper); }
+.calc-output h3 { font-size: 1.375rem; line-height: 1.3; padding-bottom: 0.6rem; margin-bottom: 0.6rem; border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+.calc-output .calc-label { color: rgba(255, 255, 255, 0.75); }
+.calc-output .result-line { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
+.calc-output .result-line:last-child { border-bottom: 0; }
+.calc-output .result-label { font-family: var(--sans); font-size: 1rem; line-height: 1.35; color: rgba(255, 255, 255, 0.78); }
+.calc-output .result-value { font-family: var(--mono); font-weight: 500; font-size: 1.125rem; text-align: right; overflow-wrap: anywhere; }
+.calc-output .result-value.accent { color: var(--zest); }
+.calc-output .cost-summary { margin-top: 1.1rem; padding-top: 0.6rem; border-top: 1px solid var(--paper); }
+.calc-output .cost-summary .result-value { font-size: 1.75rem; color: var(--zest); }
+.calc-output .small { color: rgba(255, 255, 255, 0.62); max-width: none; }
+.calc-output p { max-width: none; }
+
+/* tables */
+table.data { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 1rem; line-height: 1.4; margin: 1.5rem 0; }
+table.data th { font-weight: 600; font-size: 0.9375rem; text-align: left; vertical-align: bottom; padding: 0.6rem 1rem 0.6rem 0; border-bottom: 1px solid var(--ink); background: none; color: var(--ink); }
+table.data td { vertical-align: top; padding: 0.65rem 1rem 0.65rem 0; border-bottom: 1px solid var(--hair); }
+table.data td.num, table.data th.num { text-align: right; font-family: var(--mono); font-size: 0.9375rem; white-space: nowrap; }
+table.data th.num { font-family: var(--sans); }
+table.data td:last-child, table.data th:last-child { padding-right: 0; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+.table-tools { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 0.75rem 1.5rem; margin-bottom: 0.25rem; }
+.table-tools .field { flex: 1 1 14rem; max-width: 22rem; }
+
+/* ---------- search ---------- */
+
+.search-modal { position: fixed; inset: 0; z-index: 50; display: none; }
+.search-modal.open { display: block; }
+.search-backdrop { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.9); }
+.search-panel { position: relative; display: flex; flex-direction: column; max-width: 40rem; max-height: 78vh; margin: 9vh auto 0; background: var(--paper); border: 1px solid var(--ink); }
+.search-input-wrap { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--ink); }
+#search-input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); font-family: var(--serif); font-weight: 300; font-size: 1.375rem; }
+.search-close { border: 0; background: none; font-family: var(--sans); font-size: 1rem; cursor: pointer; color: var(--ink); padding: 0.25rem; }
+.search-results { overflow-y: auto; }
+.search-result { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; padding: 0.8rem 1.25rem; border-bottom: 1px solid var(--hair); text-decoration: none; }
+.search-result:hover, .search-result.selected { background: var(--wash); }
+.search-result-type { font-family: var(--sans); font-size: 0.9375rem; color: var(--pith); padding-top: 0.15rem; }
+.search-result-title { font-size: 1.125rem; line-height: 1.35; }
+.search-result-subtitle { font-family: var(--sans); font-size: 0.9375rem; line-height: 1.4; color: var(--pith); }
+.search-result-arrow { display: none; }
+.search-empty { padding: 1.25rem; }
+.search-hint { font-family: var(--sans); font-size: 1rem; }
+.search-hint-small { font-family: var(--sans); font-size: 0.875rem; color: var(--pith); margin-top: 0.75rem; }
+.search-suggest { font: inherit; color: inherit; border: 0; padding: 0; margin-right: 0.6rem; cursor: pointer; background: linear-gradient(var(--zest), var(--zest)) 0 86% / 100% 0.4em no-repeat; }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 47.99rem) {
+  body { font-size: 1.0625rem; }
+  .calc-wrap, .two-col { grid-template-columns: minmax(0, 1fr); }
+  .two-col { gap: 1.5rem; }
+  .calc-inputs { border-right: 0; border-bottom: 1px solid var(--ink); }
+  .calc-inputs, .calc-output { padding: 1.25rem; }
+  .print-spec-btn { margin: 0.75rem 0 0; }
+  .manual table.data { display: block; overflow-x: auto; }
+  .manual table.data th, .manual table.data td { min-width: 5.5rem; }
+  .manual table.data td:first-child, .manual table.data th:first-child { min-width: 9.5rem; }
+  .manual table.data td:last-child:not(.num) { min-width: 14rem; }
+  .search-panel { margin: 0; max-height: 100vh; height: 100%; border: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* ---------- print: recipe pages become station spec cards ---------- */
+
+@media print {
+  @page { size: letter; margin: 0.6in 0.7in; }
+  body { font-size: 11pt; line-height: 1.4; color: #000; }
+  .site-header, .site-footer, .btn, .print-spec-btn, .unit-toggle, .calc-output, .calc-input-row, .search-modal, .kicker, hr.divider { display: none !important; }
+  .wrap { padding: 0; max-width: none; }
+  main { max-width: none; }
+  .calc-wrap { grid-template-columns: 1fr; border: 0; margin: 0; }
+  .calc-inputs { border: 0; padding: 0; }
+  .recipe-header h1 { font-size: 22pt; }
+  .standfirst { font-size: 10pt; }
+  .section-head { margin: 0.8rem 0 0.5rem; padding-top: 0.4rem; break-after: avoid; }
+  .section-head h2 { font-size: 13pt; }
+  ol.method li { margin-bottom: 0.4rem; }
+  ol.method, ul.ingredients { break-inside: avoid; }
+  a { text-decoration: none; }
+}
+
+/* ---------- home: one slice of citrus in the empty third ---------- */
+
+.slice { display: none; }
+.manual-search { margin-top: 1.75rem; }
+.table-tools { margin-top: 3.5rem; }
+
+@media (min-width: 70rem) {
+  .home main { position: relative; max-width: none; }
+  .home main > .statement, .home main > .rows { max-width: var(--column); }
+  .home main > .statement { max-width: 15.5em; }
+  .slice { display: block; position: absolute; top: 0.35rem; right: 0; width: 13rem; height: 13rem; }
+}
