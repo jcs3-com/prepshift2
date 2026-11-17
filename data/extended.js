@@ -1,51 +1,45 @@
 /* PREPSHIFT EXTENDED DATA
  * Super juice, batched cocktail templates, equipment.
- * Methodology references public Kevin Kos / Nickle Morris / Morgenthaler work,
+ * Batch and carbonation methodology references public Morgenthaler and Arnold work,
  * with reference defaults.
  */
 
-/* ---------- SUPER JUICE METHODOLOGY ----------
- * Super Juice (orig. Nickle Morris, popularized by Kevin Kos):
- *   - 50g peel of fruit (e.g., lime or lemon)
- *   - 16g acid blend (citric + malic for lime; citric only for lemon)
- *   - 16g distilled/filtered water (to dissolve acid + extract peel oils)
- *   - Then add fresh juice of the same fruit to total ~1000g
- * Yield is ~3–4× fresh juice from the same fruit weight.
- * Shelf life: ~2 weeks refrigerated (vs. ~24 hr fresh).
+/* ---------- SUPER JUICE ----------
+ * Prepshift's lime and lemon super juice, per 10 liter batch.
+ * Quantities scale in a straight line with the batch size. The fresh juice
+ * of the peeled fruit goes in as well; it is not listed here because it has
+ * no fixed quantity. Technique credit: Nickle Morris.
  */
 const SUPER_JUICE_SPEC = {
   lime: {
     name: "Lime Super Juice",
-    fruit_used: "Lime (Persian)",
-    peel_pct: 0.05,          // 5% by mass of finished product
-    acid_pct: 0.066,         // 6.6% acid blend
-    water_pct: 0.016,        // 1.6% water (dissolves the acid)
-    acid_blend: { citric: 0.667, malic: 0.333 }, // ⅔ citric + ⅓ malic for lime
-    juice_pct_remainder: true,   // fresh juice fills to 100%
-    ph_target: 2.2,
-    notes: "Lime's flavor is split between juice acid and peel oil. Super juice captures both. Yields ~3.3× fresh juice volume from same fruit count."
+    fruit: "lime",
+    batch_l: 10,
+    fruit_count: 100,
+    ingredients: [
+      { name: "Water",         qty: 10,    unit: "L" },
+      { name: "Lime peel",     qty: 300,   unit: "g" },
+      { name: "Citric acid",   qty: 480,   unit: "g" },
+      { name: "Malic acid",    qty: 240,   unit: "g" },
+      { name: "Tartaric acid", qty: 3.33,  unit: "g" },
+      { name: "Sugar",         qty: 600,   unit: "g" },
+      { name: "Kosher salt",   qty: 11.11, unit: "g" }
+    ]
   },
   lemon: {
     name: "Lemon Super Juice",
-    fruit_used: "Lemon (Eureka)",
-    peel_pct: 0.05,
-    acid_pct: 0.066,
-    water_pct: 0.016,
-    acid_blend: { citric: 1.0, malic: 0.0 }, // lemons are already citric-dominant
-    juice_pct_remainder: true,
-    ph_target: 2.4,
-    notes: "Single-acid blend (citric only) — lemon doesn't need the malic component lime requires. Yields ~3× fresh juice from same fruit count."
-  },
-  grapefruit: {
-    name: "Grapefruit Super Juice",
-    fruit_used: "Grapefruit (Ruby)",
-    peel_pct: 0.06,
-    acid_pct: 0.05,
-    water_pct: 0.014,
-    acid_blend: { citric: 0.5, malic: 0.5 },
-    juice_pct_remainder: true,
-    ph_target: 2.8,
-    notes: "Grapefruit super juice is the tool that makes Palomas, Hemingway Daiquiris, and Brown Derbies sing without 3-day-old fresh grapefruit going to waste."
+    fruit: "lemon",
+    batch_l: 10,
+    fruit_count: 50,
+    ingredients: [
+      { name: "Water",         qty: 10,   unit: "L" },
+      { name: "Lemon peel",    qty: 600,  unit: "g" },
+      { name: "Citric acid",   qty: 540,  unit: "g" },
+      { name: "Malic acid",    qty: 60,   unit: "g" },
+      { name: "Tartaric acid", qty: 3.33, unit: "g" },
+      { name: "Sugar",         qty: 300,  unit: "g" },
+      { name: "Kosher salt",   qty: 7.78, unit: "g" }
+    ]
   }
 };
 

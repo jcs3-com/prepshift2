@@ -41,7 +41,7 @@ RECIPES = [
 
 CALCULATORS = [
     ("calculators", "Cost and yield, core recipes"),
-    ("super-juice", "Super juice build sheet"),
+    ("super-juice", "Super juice formulas"),
     ("batch-scaler", "Batched cocktail scaler"),
     ("acid-sub", "Acid substitution"),
     ("menu-costing", "Menu costing"),
@@ -234,7 +234,7 @@ def build_home():
                  "hospitality professionals in the greater DC region.</h1>")
     body = "  " + SLICE + "\n" + statement + "\n\n" + rows(
         row("Juice", """        <p>Fresh pressed juice / Super juice</p>
-        <p class="actions"><a class="btn" href="/juice/#ask">Ask about Prepshift Juice</a> <a href="/pages/super-juice.html">How super juice works</a></p>"""),
+        <p class="actions"><a class="btn" href="/juice/#ask">Ask about Prepshift Juice</a> <a href="/pages/super-juice.html">Super juice formulas</a></p>"""),
         row("Improve", """        <p>Process consulting for bars and kitchens that want to make more and use less. We look at purchasing, prep, yield and holding, then change what isn&rsquo;t working.</p>
         <p class="actions"><a class="btn" href="/improve/#ask">Ask about a consult</a></p>"""),
         row("Manual", """        <p>Recipes, calculators and reference tables. Free to use.</p>
@@ -262,7 +262,7 @@ def build_juice():
     body = '    <h1 class="statement indent">Fresh pressed juice and super juice for bars, restaurants and caterers.</h1>\n\n' + rows(
         row("What it is", """        <p>Fresh pressed citrus juice, and super juice. Super juice uses the whole fruit. The peel&rsquo;s oils are extracted and blended with the juice, so each case of citrus goes further and the result holds longer than fresh-squeezed.</p>
         <p>It pours one-for-one in place of fresh juice.</p>
-        <p><a href="/pages/super-juice.html">The super juice method and maths are in the manual.</a></p>"""),
+        <p><a href="/pages/super-juice.html">The lime and lemon formulas are in the manual.</a></p>"""),
         row("How it&rsquo;s made", "        <p>In batches, with our facility partner.</p>"),
         row("Who it&rsquo;s for", "        <p>Bars, restaurants, caterers, hotels and venues in the greater DC region.</p>"),
         row("Formats and pricing", "        <p>On request. Tell us about your program below.</p>"),
@@ -320,7 +320,7 @@ def build_data():
     return page(
         "data/index.html",
         "Data | Bar prep reference tables | Prepshift",
-        "Reference tables for bar prep: ingredient yields and costs, preparation hold times and super juice build ratios. Filter them or download CSV.",
+        "Reference tables for bar prep: ingredient yields and costs, preparation hold times and super juice formulas. Filter them or download CSV.",
         body, main_class="wide",
         scripts='  <script src="/js/calc.js"></script>\n  <script src="/js/data-tables.js"></script>\n' + INTAKE_JS)
 
@@ -381,7 +381,7 @@ def build_legal():
     <p>The calculators and tables are provided as tools, without warranty. Costs, yields and hold times are reference values and vary by market, season and handling. Check them against your own invoices and your own product.</p>
 
     <div class="section-head"><h2>Credit and reuse</h2></div>
-    <p>Where a recipe or method began with a named author, the credit appears on the relevant page: Nickle Morris and Kevin Kos for super juice, Jeffrey Morgenthaler for bottling and batching, Dave Arnold for dilution and acid adjustment, Sam Ross for honey-ginger syrup. If a credit is missing, that is an oversight. <a href="mailto:{EMAIL}">Tell us</a> and we&rsquo;ll fix it.</p>
+    <p>Where a recipe or method began with a named author, the credit appears on the relevant page: Nickle Morris for super juice, Jeffrey Morgenthaler for bottling and batching, Dave Arnold for dilution and acid adjustment, Sam Ross for honey-ginger syrup. If a credit is missing, that is an oversight. <a href="mailto:{EMAIL}">Tell us</a> and we&rsquo;ll fix it.</p>
     <p>The text, code and design of this site are &copy; {YEAR} Prepshift. You&rsquo;re welcome to use the manual in your own bar or kitchen. Republishing it or building a commercial product from it needs permission.</p>
 
     <div class="section-head"><h2>Advertising</h2></div>
@@ -408,7 +408,7 @@ def partial(name):
 
 MANUAL_META = {
     "calculators": ("Cost and yield calculators | Prepshift", "Scale any core bar-prep recipe to any batch size and see cost per ounce, per liter and per pour."),
-    "super-juice": ("Super juice calculator | Prepshift", "Build sheet and yield calculator for lime, lemon and grapefruit super juice, with method and working notes."),
+    "super-juice": ("Super juice formulas | Prepshift", "Prepshift's lime and lemon super juice formulas per 10 liter batch, with a scaler for any batch size."),
     "batch-scaler": ("Batched cocktail scaler | Prepshift", "Scale a single-serving cocktail spec to any batch size with dilution, final ABV and container fit."),
     "acid-sub": ("Acid substitution calculator | Prepshift", "Replace fresh citrus with water and food-grade acid, and understand what you trade away."),
     "menu-costing": ("Menu costing engine | Prepshift", "Enter bottle costs once and see every drink costed, priced and margin-analyzed against a target pour cost."),

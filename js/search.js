@@ -49,7 +49,7 @@ const SEARCH_INDEX = (function() {
   // 3. Calculators / Tools
   const tools = [
     { title: 'Cost & Yield Calculators', subtitle: 'Core seven recipes — per-oz, per-liter, per-pour', url: '/pages/calculators.html', body: 'cost yield scale batch ounce liter pour fresh juice simple syrup', tags: ['calculator', 'tool'] },
-    { title: 'Super Juice Calculator', subtitle: 'Nickle Morris / Kevin Kos methodology', url: '/pages/super-juice.html', body: 'super juice lime lemon grapefruit peel citric malic acid blend 3x yield 14 day shelf', tags: ['calculator', 'tool', 'citrus'] },
+    { title: 'Super Juice', subtitle: 'Lime and lemon formulas, scaled to any batch', url: '/pages/super-juice.html', body: 'super juice superjuice lime lemon peel citric malic tartaric acid sugar salt formula batch scale liters', tags: ['calculator', 'tool', 'citrus'] },
     { title: 'Batched Cocktail Scaler', subtitle: 'Single drink to bottle, keg, or jug with dilution and ABV', url: '/pages/batch-scaler.html', body: 'batch scaler dilution ABV bottle keg gallon final alcohol cocktail single serving', tags: ['calculator', 'tool', 'batch'] },
     { title: 'Acid Substitution Calculator', subtitle: 'Replace fresh citrus with water and food-grade acid', url: '/pages/acid-sub.html', body: 'acid substitution citric malic water lime lemon grapefruit arnold liquid intelligence', tags: ['calculator', 'tool', 'acid'] },
     { title: 'Menu Costing Engine', subtitle: 'Full menu cost analysis with pour-cost solver', url: '/pages/menu-costing.html', body: 'menu costing pour cost margin price spirit bottle invoice wholesale 18 20 22 percent target', tags: ['calculator', 'tool', 'cost', 'menu'] },

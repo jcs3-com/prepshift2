@@ -56,28 +56,25 @@
     },
     {
       id: 'superjuice',
-      title: 'Super juice build ratios',
+      title: 'Super juice, 10 liter batch',
       columns: [
-        { label: 'Juice' },
-        { label: 'Peel', num: true },
-        { label: 'Acid', num: true },
-        { label: 'Citric : malic', num: true },
-        { label: 'Water', num: true },
-        { label: 'Target pH', num: true }
+        { label: 'Ingredient' },
+        { label: 'Lime', num: true },
+        { label: 'Lemon', num: true }
       ],
       rows: function () {
-        return Object.keys(SUPER_JUICE_SPEC).map(function (key) {
-          var s = SUPER_JUICE_SPEC[key];
-          var one = function (n) { return (n * 100).toFixed(1) + '%'; };
-          return [
-            s.name,
-            one(s.peel_pct),
-            one(s.acid_pct),
-            Math.round(s.acid_blend.citric * 100) + ' : ' + Math.round(s.acid_blend.malic * 100),
-            one(s.water_pct),
-            String(s.ph_target)
-          ];
+        var lime = SUPER_JUICE_SPEC.lime, lemon = SUPER_JUICE_SPEC.lemon;
+        var qty = function (i) {
+          if (i.unit === 'L') return i.qty + ' L';
+          return (i.qty >= 100 ? Math.round(i.qty) : Math.round(i.qty * 10) / 10) + ' g';
+        };
+        var rows = lime.ingredients.map(function (i, n) {
+          var name = /peel$/.test(i.name) ? 'Peel' : i.name;
+          return [name, qty(i), qty(lemon.ingredients[n])];
         });
+        rows.push(['Fresh juice', 'from the peeled fruit', 'from the peeled fruit']);
+        rows.push(['Fruit for the peel', 'about ' + lime.fruit_count + ' limes', 'about ' + lemon.fruit_count + ' lemons']);
+        return rows;
       }
     }
   ];
