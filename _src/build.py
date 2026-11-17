@@ -24,8 +24,7 @@ YEAR = 2026
 
 NAV = [
     ("Juice", "/juice/"),
-    ("Kitchen", "/kitchen/"),
-    ("Waste", "/waste/"),
+    ("Improve", "/improve/"),
     ("Manual", "/manual/"),
     ("Contact", "/contact/"),
 ]
@@ -231,20 +230,13 @@ SLICE = """<svg class="slice" viewBox="0 0 200 200" aria-hidden="true">
 
 
 def build_home():
-    statement = (
-        '    <h1 class="statement indent">Prepshift is a bar-prep company. Our <a href="/juice/">superjuice</a> '
-        "is made for bars and restaurants, produced with a facility partner and built for regional distribution. "
-        'We develop small-batch products and <a href="/kitchen/">training</a> with a restaurant partner, keep a '
-        'working <a href="/manual/">manual</a> of recipes and calculators, and help kitchens '
-        '<a href="/waste/">waste less</a>.</h1>'
-    )
+    statement = ('    <h1 class="statement indent">Prepshift supports bars, restaurants, caterers, and '
+                 "hospitality professionals in the greater DC region.</h1>")
     body = "  " + SLICE + "\n" + statement + "\n\n" + rows(
-        row("Juice", """        <p>Citrus superjuice for bar programs. It uses the peel as well as the juice, so a case of fruit goes further and holds longer than fresh-squeezed.</p>
-        <p class="actions"><a class="btn" href="/juice/#ask">Ask about Prepshift Juice</a> <a href="/pages/super-juice.html">How superjuice works</a></p>"""),
-        row("Kitchen", """        <p>Small-batch products and hands-on training sessions, developed with our restaurant partner.</p>
-        <p class="actions"><a class="btn" href="/kitchen/#ask">Ask about products or training</a></p>"""),
-        row("Waste", """        <p>Process consulting for bars and kitchens that want to throw less away. We look at purchasing, prep, yield and holding, then change what isn&rsquo;t working.</p>
-        <p class="actions"><a class="btn" href="/waste/#ask">Ask about a consult</a></p>"""),
+        row("Juice", """        <p>Fresh pressed juice / Super juice</p>
+        <p class="actions"><a class="btn" href="/juice/#ask">Ask about Prepshift Juice</a> <a href="/pages/super-juice.html">How super juice works</a></p>"""),
+        row("Improve", """        <p>Process consulting for bars and kitchens that want to make more and use less. We look at purchasing, prep, yield and holding, then change what isn&rsquo;t working.</p>
+        <p class="actions"><a class="btn" href="/improve/#ask">Ask about a consult</a></p>"""),
         row("Manual", """        <p>Recipes, calculators and reference tables. Free to use.</p>
         <p class="actions"><a class="mark" href="/manual/#recipes">Recipes</a> <a class="mark" href="/manual/#calculators">Calculators</a> <a class="mark" href="/data/">Data</a></p>"""),
     )
@@ -252,8 +244,8 @@ def build_home():
           '"name":"Prepshift","url":"' + SITE + '/","email":"' + EMAIL + '"}</script>')
     return page(
         "index.html",
-        "Prepshift | Superjuice and bar prep",
-        "Prepshift is a bar-prep company: citrus superjuice for bars and restaurants, small-batch products and training, food waste consulting, and a free manual of recipes and calculators.",
+        "Prepshift | Juice and bar prep for the greater DC region",
+        "Prepshift supports bars, restaurants, caterers, and hospitality professionals in the greater DC region: fresh pressed juice and super juice, process consulting, and a free manual of recipes and calculators.",
         body, head_extra=ld, body_attrs=' class="home"')
 
 
@@ -267,60 +259,41 @@ def build_juice():
         {"name": "Weekly citrus juice", "label": "Citrus juice you use in a week", "placeholder": "For example: 20 quarts of lime"},
         NOTES,
     ])
-    body = '    <h1 class="statement indent">Prepshift Juice is citrus superjuice for bars and restaurants.</h1>\n\n' + rows(
-        row("What it is", """        <p>Superjuice uses the whole fruit. The peel&rsquo;s oils are extracted and blended with the juice, so each case of citrus goes further and the result holds longer than fresh-squeezed.</p>
+    body = '    <h1 class="statement indent">Fresh pressed juice and super juice for bars, restaurants and caterers.</h1>\n\n' + rows(
+        row("What it is", """        <p>Fresh pressed citrus juice, and super juice. Super juice uses the whole fruit. The peel&rsquo;s oils are extracted and blended with the juice, so each case of citrus goes further and the result holds longer than fresh-squeezed.</p>
         <p>It pours one-for-one in place of fresh juice.</p>
-        <p><a href="/pages/super-juice.html">The method and the maths are in the manual.</a></p>"""),
+        <p><a href="/pages/super-juice.html">The super juice method and maths are in the manual.</a></p>"""),
         row("How it&rsquo;s made", "        <p>In batches, with our facility partner.</p>"),
-        row("Who it&rsquo;s for", "        <p>Bars, restaurants, hotels and venues. Distribution is regional.</p>"),
+        row("Who it&rsquo;s for", "        <p>Bars, restaurants, caterers, hotels and venues in the greater DC region.</p>"),
         row("Formats and pricing", "        <p>On request. Tell us about your program below.</p>"),
         row("Ask us", form),
     )
     return page(
         "juice/index.html",
-        "Prepshift Juice | Citrus superjuice for bars and restaurants",
-        "Prepshift Juice is citrus superjuice for bars, restaurants, hotels and venues. Ask about wholesale and regional distribution.",
+        "Prepshift Juice | Fresh pressed juice and super juice",
+        "Fresh pressed juice and super juice for bars, restaurants and caterers in the greater DC region. Ask about wholesale.",
         body, current="/juice/", scripts=INTAKE_JS)
 
 
-def build_kitchen():
-    form = intake("Prepshift Kitchen", [WHO[0], WHO[1], WHO[3],
-        {"name": "Asking about", "label": "I'm asking about", "type": "select",
-         "options": ["Products", "A training session", "Both"]},
-        {"name": "Team size", "label": "Team size"},
-        NOTES,
-    ])
-    body = '    <h1 class="statement indent">Small-batch products and training, with our restaurant partner.</h1>\n\n' + rows(
-        row("Products", "        <p>Limited runs of prepared ingredients for bar and kitchen programs. Ask what&rsquo;s available.</p>"),
-        row("Training", "        <p>Hands-on sessions for bar and kitchen teams. Ask about dates and formats.</p>"),
-        row("Ask us", form),
-    )
-    return page(
-        "kitchen/index.html",
-        "Kitchen | Small-batch products and training | Prepshift",
-        "Small-batch products and hands-on training sessions from Prepshift and its restaurant partner.",
-        body, current="/kitchen/", scripts=INTAKE_JS)
-
-
-def build_waste():
-    form = intake("Food waste consulting", [WHO[0], WHO[1], WHO[3],
+def build_improve():
+    form = intake("Process consulting", [WHO[0], WHO[1], WHO[3],
         {"name": "Operation", "label": "Type of operation", "type": "select",
-         "options": ["Bar", "Restaurant", "Hotel", "Commissary or production kitchen", "Other"]},
+         "options": ["Bar", "Restaurant", "Caterer", "Hotel", "Commissary or production kitchen", "Other"]},
         {"name": "Locations", "label": "Number of locations"},
         {"name": "Most wasted", "label": "What gets thrown away most", "type": "textarea"},
         NOTES,
     ])
-    body = '    <h1 class="statement indent">Prepshift helps bars and kitchens waste less food.</h1>\n\n' + rows(
-        row("What we do", "        <p>Process consulting. We look at how product is bought, prepped, held and used, find where it&rsquo;s being lost, and change the process.</p>"),
-        row("Who it&rsquo;s for", "        <p>Bars, restaurants, hotels and commissary kitchens.</p>"),
+    body = '    <h1 class="statement indent">Process consulting for bars and kitchens that want to make more and use less.</h1>\n\n' + rows(
+        row("What we do", "        <p>We look at how product is bought, prepped, held and used, find where it&rsquo;s being lost, and change the process. Reducing food waste is a core part of the work.</p>"),
+        row("Who it&rsquo;s for", "        <p>Bars, restaurants, caterers, hotels and commissary kitchens.</p>"),
         row("How it starts", "        <p>With a short conversation about your operation. Tell us a little below.</p>"),
         row("Ask us", form),
     )
     return page(
-        "waste/index.html",
-        "Food waste reduction consulting | Prepshift",
-        "Prepshift consults on food waste reduction for bars, restaurants, hotels and commissary kitchens.",
-        body, current="/waste/", scripts=INTAKE_JS)
+        "improve/index.html",
+        "Improve | Process consulting for bars and kitchens | Prepshift",
+        "Process consulting, including food waste reduction, for bars, restaurants, caterers and kitchens in the greater DC region.",
+        body, current="/improve/", scripts=INTAKE_JS)
 
 
 def build_data():
@@ -376,7 +349,7 @@ def build_manual():
 def build_contact():
     form = intake("Prepshift", [
         {"name": "Topic", "label": "What it's about", "type": "select",
-         "options": ["Prepshift Juice", "Kitchen: products and training", "Food waste consulting", "Data access", "Something else"]},
+         "options": ["Prepshift Juice", "Process consulting", "Data access", "Something else"]},
         WHO[0], WHO[1], WHO[3],
         {"name": "Message", "label": "Message", "type": "textarea", "required": True},
     ])
@@ -387,7 +360,7 @@ def build_contact():
     return page(
         "contact/index.html",
         "Contact | Prepshift",
-        "Write to Prepshift about superjuice, small-batch products and training, food waste consulting or data access.",
+        "Write to Prepshift about juice, process consulting or data access.",
         body, current="/contact/", scripts=INTAKE_JS)
 
 
@@ -467,7 +440,7 @@ def build_404():
 
 def main():
     home_url = build_home()
-    urls = [home_url, build_juice(), build_kitchen(), build_waste(), build_manual(), build_data(), build_contact()]
+    urls = [home_url, build_juice(), build_improve(), build_manual(), build_data(), build_contact()]
     urls += build_manual_pages()
     urls.append(build_legal())
     build_404()

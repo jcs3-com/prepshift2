@@ -61,9 +61,8 @@ const SEARCH_INDEX = (function() {
 
   // 4. Static pages / sections
   const pages = [
-    { title: 'Prepshift Juice', subtitle: 'Citrus superjuice for bars and restaurants', url: '/juice/', body: 'juice superjuice super juice wholesale distribution bars restaurants hotels order buy inquiry' },
-    { title: 'Kitchen', subtitle: 'Small-batch products and training', url: '/kitchen/', body: 'kitchen small batch products training sessions restaurant partner team' },
-    { title: 'Waste', subtitle: 'Food waste reduction consulting', url: '/waste/', body: 'food waste reduction consulting process purchasing prep yield holding kitchen bar' },
+    { title: 'Prepshift Juice', subtitle: 'Fresh pressed juice and super juice', url: '/juice/', body: 'juice fresh pressed super juice superjuice wholesale bars restaurants caterers order buy inquiry' },
+    { title: 'Improve', subtitle: 'Process consulting for bars and kitchens', url: '/improve/', body: 'improve process consulting food waste reduction purchasing prep yield holding kitchen bar' },
     { title: 'Data', subtitle: 'Reference tables: yields, costs and shelf life', url: '/data/', body: 'data database tables reference yield cost shelf life csv download dataset' },
     { title: 'Contact', subtitle: 'Write to Prepshift', url: '/contact/', body: 'contact email inquiry intake' },
     { title: 'Draft & Bottled Cocktails', subtitle: 'Bottled, tapped and pre-made', url: '/pages/draft.html', body: 'morgenthaler clyde common bottle keg draft tap carbonation force PSI volumes co2 negroni americano' },
